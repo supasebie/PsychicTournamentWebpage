@@ -313,6 +313,11 @@ body.mobile-nav-open .nav__mobile-nav {
 .section {
   padding: 3em 0 2em;
 }
+
+/* Privacy Policy page-specific spacing/indentation */
+.policy > *:not(h1):not(h2):not(h3):not(h4) {
+  margin-left: 2em;
+}
 .section__heading-small {
   font-size: 0.88rem;
   display: block;
