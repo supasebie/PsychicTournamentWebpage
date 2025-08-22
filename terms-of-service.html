@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDJNVSQRJX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date());
+      gtag('config', 'G-PDJNVSQRJX');
+    </script>
+    <title>Terms of Service • Psychic Tournament</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav__container container">
+        <div class="nav__left">
+          <a href="/">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+              class="nav__logo"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 0H30V30H0V0Z" fill="#7C3AED" />
+            </svg>
+            <span class="nav__logo-name">Psychic Tournament</span>
+          </a>
+        </div>
+        <div class="nav__right">
+          <button class="nav__hamburger" aria-label="Menu"></button>
+          <ul class="nav__nav-desktop">
+            <li class="nav__desktop-item">
+              <a href="/privacy-policy.html" class="nav__desktop-link">Privacy Policy</a>
+            </li>
+            <li class="nav__desktop-item">
+              <a href="/terms-of-service.html" class="nav__desktop-link">Terms of Service</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav__mobile-nav">
+        <div class="nav__mobile-nav container">
+          <ul class="nav__mobile-links">
+            <li class="nav__mobiile-item">
+              <a href="/" class="nav__mobile-link">Home</a>
+            </li>
+            <li class="nav__mobiile-item">
+              <a href="/privacy-policy.html" class="nav__mobile-link">Privacy Policy</a>
+            </li>
+            <li class="nav__mobiile-item">
+              <a href="/terms-of-service.html" class="nav__mobile-link">Terms of Service</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="section">
+      <section class="section__container container">
+        <div class="policy">
+          <h1>Terms of Service</h1>
+          <div id="md"></div>
+        </div>
+      </section>
+    </main>
+
+    <section class="container text-centered">
+      <p>
+        <small>
+          An app built by OverNineThousand •
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          •
+          <a href="/terms-of-service.html">Terms of Service</a>
+        </small>
+      </p>
+    </section>
+
+    <script>
+      // Mobile menu handling, mirroring privacy-policy.html
+      var hamburger = document.querySelector(".nav__hamburger");
+      var body = document.querySelector("body");
+      function toggleMobileNav(e) {
+        body.classList.toggle("mobile-nav-open");
+      }
+      function isModalOpen() {
+        return body.classList.contains("mobile-nav-open") ? true : false;
+      }
+      function closeMobileMenu(e) {
+        if (
+          isModalOpen() &&
+          (e.target.classList.contains("nav__mobiile-item") ||
+            e.target.classList.contains("nav__hamburger"))
+        )
+          return;
+        body.classList.remove("mobile-nav-open");
+      }
+      window.addEventListener("click", closeMobileMenu);
+      hamburger && hamburger.addEventListener("click", toggleMobileNav);
+    </script>
+
+    <!-- Load and render Markdown safely -->
+    <script>
+      async function loadMarkdown() {
+        try {
+          const res = await fetch('./terms-of-service.md', { cache: 'no-store' });
+          if (!res.ok) throw new Error('Failed to load Terms markdown');
+          const text = await res.text();
+          // Minimal Markdown -> HTML conversion (headings, paragraphs, lists, bold/italics, links)
+          // For simplicity and no external dependency, do a very basic transform suitable for our TOS
+          const escapeHtml = (s) => s
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+
+          function mdToHtml(md) {
+            const lines = md.split(/\r?\n/);
+            let html = '';
+            let inList = false;
+            for (let raw of lines) {
+              const line = raw.trimEnd();
+              if (/^\s*$/.test(line)) {
+                if (inList) { html += '</ul>'; inList = false; }
+                continue;
+              }
+              const h = line.match(/^(#{1,6})\s+(.*)$/);
+              if (h) {
+                if (inList) { html += '</ul>'; inList = false; }
+                const level = h[1].length;
+                const content = h[2];
+                html += `<h${level}>${inline(content)}</h${level}>`;
+                continue;
+              }
+              const li = line.match(/^[-*]\s+(.*)$/);
+              if (li) {
+                if (!inList) { html += '<ul>'; inList = true; }
+                html += `<li>${inline(li[1])}</li>`;
+                continue;
+              }
+              // paragraph
+              if (inList) { html += '</ul>'; inList = false; }
+              html += `<p>${inline(line)}</p>`;
+            }
+            if (inList) { html += '</ul>'; }
+            return html;
+          }
+
+          function inline(s) {
+            // Escape HTML first to avoid injection from raw Markdown
+            s = escapeHtml(s);
+            // bold **text**
+            s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+            // italics *text* or _text_
+            s = s.replace(/(^|\W)\*(?!\*)([^*]+)\*(?=\W|$)/g, '$1<em>$2</em>');
+            s = s.replace(/(^|\W)_([^_]+)_(?=\W|$)/g, '$1<em>$2</em>');
+            // links [text](url)
+            s = s.replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+            return s;
+          }
+
+          document.getElementById('md').innerHTML = mdToHtml(text);
+        } catch (e) {
+          document.getElementById('md').innerHTML = '<p>Unable to load Terms at this time.</p>';
+          console.error(e);
+        }
+      }
+      loadMarkdown();
+    </script>
+  </body>
+</html>
+
