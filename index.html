@@ -908,8 +908,10 @@
         }
 
         function build() {
-          w = canvas.clientWidth;
-          h = canvas.clientHeight;
+          // Measure the viewport, never the canvas itself — measuring the canvas
+          // feeds its own buffer size back into layout and it grows without bound.
+          w = window.innerWidth;
+          h = window.innerHeight;
           canvas.width = Math.floor(w * dpr);
           canvas.height = Math.floor(h * dpr);
           ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -958,7 +960,13 @@
         var resizeTimer;
         window.addEventListener("resize", function () {
           clearTimeout(resizeTimer);
-          resizeTimer = setTimeout(start, 180);
+          resizeTimer = setTimeout(function () {
+            // On mobile the URL bar sliding in and out fires resize constantly,
+            // changing only the height. Rebuilding on that wastes work and makes
+            // the sky visibly jump mid-scroll, so only react to width changes.
+            if (window.innerWidth === w) return;
+            start();
+          }, 200);
         });
 
         // pause when the tab isn't visible
