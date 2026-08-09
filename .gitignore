@@ -1,3 +1,6 @@
 # Ignore JetBrains IDE project settings
 .idea/
 .DS_Store
+
+# Claude Code local settings (launch.json is intentionally tracked)
+.claude/settings.local.json

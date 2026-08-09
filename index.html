@@ -3,537 +3,978 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Psychic Tournament — Train your intuition. Trust your first instinct.</title>
+    <meta
+      name="description"
+      content="Three scored intuition games, five MindSight exercises, and statistics honest enough to tell you when you're only matching chance. A beautifully crafted, offline-first trainer for Android and iOS."
+    />
+    <meta name="theme-color" content="#0E0B1F" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href="https://psychictournament.online/" />
+    <link rel="icon" href="./imgs/logo.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./imgs/logo.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Psychic Tournament" />
+    <meta property="og:url" content="https://psychictournament.online/" />
+    <meta property="og:title" content="Psychic Tournament — Trust your first instinct." />
+    <meta
+      property="og:description"
+      content="Three scored intuition games, five MindSight exercises, and statistics honest enough to tell you when you're only matching chance."
+    />
+    <meta property="og:image" content="https://psychictournament.online/imgs/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Psychic Tournament — Trust your first instinct." />
+    <meta
+      name="twitter:description"
+      content="Three scored intuition games, five MindSight exercises, and statistics that show you the chance baseline."
+    />
+    <meta name="twitter:image" content="https://psychictournament.online/imgs/og-cover.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="./style.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Opt into scroll-reveal only when JS is available; see .js .reveal in style.css -->
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDJNVSQRJX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);} 
-      gtag('js', new Date());
-      gtag('config', 'G-PDJNVSQRJX');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-PDJNVSQRJX");
     </script>
-    <title>Psychic Tournament - A Beautiful and Fun Zener Card App!</title>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Psychic Tournament",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Android, iOS",
+        "url": "https://psychictournament.online/",
+        "description": "Three scored intuition games, five MindSight exercises, and local statistics measured against a 20% chance baseline.",
+        "author": { "@type": "Organization", "name": "OverNineThousand" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      }
+    </script>
   </head>
+
   <body>
-    <nav class="nav">
-      <div class="nav__container container">
-        <div class="nav__left">
-          <a href="/">
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 30 30"
-              fill="none"
-              class="nav__logo"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M0 0H30V30H0V0Z" fill="#7C3AED" />
-            </svg>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-            <span class="nav__logo-name">Psychic Tournament</span>
-          </a>
-        </div>
+    <!-- Cosmic background: drifting gradient, neon glows, starfield, shimmer -->
+    <div class="sky" aria-hidden="true"></div>
+    <div class="sky-glow sky-glow--violet" aria-hidden="true"></div>
+    <div class="sky-glow sky-glow--blue" aria-hidden="true"></div>
+    <canvas id="stars" aria-hidden="true"></canvas>
+
+    <!-- ================================ NAV ================================ -->
+    <header class="nav" id="nav">
+      <div class="shell nav__inner">
+        <a class="brand" href="/">
+          <img class="brand__mark" src="./imgs/logo.svg" alt="" width="34" height="34" />
+          <span>Psychic Tournament</span>
+        </a>
+
+        <nav aria-label="Primary">
+          <ul class="nav__links">
+            <li><a class="nav__link" href="#games">Games</a></li>
+            <li><a class="nav__link" href="#review">Session review</a></li>
+            <li><a class="nav__link" href="#leaderboards">Leaderboards</a></li>
+            <li><a class="nav__link" href="#mindsight">MindSight</a></li>
+            <li><a class="nav__link" href="#odds">The odds</a></li>
+          </ul>
+        </nav>
+
         <div class="nav__right">
-          <button class="nav__hamburger" aria-label="Menu"></button>
-          <ul class="nav__nav-desktop">
-            <!-- <li class="nav__desktop-item">
-              <a href="#" class="nav__desktop-link">Features</a>
-            </li>
-            <li class="nav__desktop-item">
-              <a
-                href="https://github.com/vickOnRails/Prudent"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-secondary nav__desktop-link"
-                >See Github</a
-              >
-            </li> -->
-            <li class="nav__desktop-item">
-              <a href="#" class="btn nav__desktop-link">App Store</a>
-            </li>
-            <!-- <li class="nav__desktop-item">
-              <a href="/privacy-policy.html" class="nav__desktop-link">Privacy Policy</a>
-            </li> -->
-          </ul>
-        </div>
-      </div>
-
-      <div class="nav__mobile-nav">
-        <div class="nav__mobile-nav container">
-          <ul class="nav__mobile-links">
-            <!-- <li class="nav__mobiile-item">
-              <a href="/" class="nav__mobile-link">Home</a>
-            </li> -->
-            <!-- <li class="nav__mobiile-item">
-              <a href="#" class="nav__mobile-link">App Store</a>
-            </li> -->
-            <!-- <li class="nav__mobiile-item"></li>
-            <li class="nav__mobiile-item">
-              <a href="#" class="nav__mobile-link">Features</a>
-            </li> -->
-            <!-- <li class="nav__mobiile-item">
-              <a href="#" class="nav__mobile-link">Pricing</a>
-            </li> -->
-            <li class="nav__mobiile-item">
-              <a href="/privacy-policy.html" class="nav__mobile-link">Privacy Policy</a>
-            </li>
-            <li class="nav__mobiile-item">
-              <a href="/terms-of-service.html" class="nav__mobile-link">Terms Of Service</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <header class="header">
-      <div class="header__container container">
-        <div class="header__text">
-          <h1 class="header__heading-text">
-            Fun, Beautiful, Engaging
-            <span class="highlighted">Zener Card Game</span>
-          </h1>
-          <p class="header__text-text">
-            Psychic Tournament is the first Zener Card app built with social
-            elements. Test your insight and see if you have what it takes to be the
-            daily leader or shoot for the best score of the month! If that's not your style,
-            use Psychic Tournament as a focus tool. Our phenomenal statistics analytics
-            helps you zone in on your progress
-          </p>
-
-          <div class="btn-group">
-            <a href="" class="btn"> App Store </a>
-            <!-- <a
-              href="https://github.com/vickOnRails/Prudent"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-secondary"
-            >
-              See Github
-            </a> -->
-          </div>
-        </div>
-        <div class="header__img">
-          <picture>
-            <source media="(max-width: 560px)" srcset="./imgs/1.png" />
-            <img
-              loading="lazy"
-              src="./imgs/1.png"
-              alt="Mobile Image"
-              class="img-screen-ui"
-            />
-          </picture>
+          <a class="btn btn--primary btn--sm" href="#get">Get the app</a>
+          <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navDrawer">
+            <span></span>
+          </button>
         </div>
       </div>
     </header>
-    <main>
-      <section class="section speed grey-background">
-        <div class="section__container container" data-aos="fade-up">
-          <div class="section__text-content">
-            <h2 class="section__heading">
-              <small class="section__heading-small">Beautiful and Fun</small>
-              Engaging Zener Card Sessions
-            </h2>
-            <p class="section__text">
-              Psychic Tournament brings gamification to the max. Hot streaks,
-              charts, and more. Zone in and flex your intuition.
-            </p>
-            <!-- <a href="#" class="section__link with-arrow"
-              >Read about our Infrastructure</a
-            > -->
-          </div>
-          <div class="section__img">
-            <picture>
-              <source media="(max-width : 560px)" srcset="./imgs/2.png" />
-              <img loading="lazy" src="./imgs/2.png" alt="Mobile Image" />
-            </picture>
-          </div>
-        </div>
-      </section>
 
-      <section class="section privacy">
-        <div class="section__container container" data-aos="fade-up">
-          <div class="section__text-content">
-            <h2 class="section__heading">
-              <small class="section__heading-small"
-                >A DIFFERENT ZENER GAME</small
-              >
-              Stats and rankings, or totally casual
-            </h2>
-            <p class="section__text">
-              If you're one of the best you can shoot for the leaderboards, or
-              you can play casually and use the app as a focus tool. It's
-              totally up to you!
-            </p>
-            <!-- <a href="#" class="section__link with-arrow"
-              >Read about our Infrastructure</a
-            > -->
-          </div>
-          <div class="section__img">
-            <picture>
-              <source media="(max-width : 560px)" srcset="./imgs/3.png" />
-              <img
-                loading="lazy"
-                src="./imgs/3.png"
-                alt="Mobile Image"
-                width="100%"
-              />
-            </picture>
-          </div>
-        </div>
-      </section>
-      <div class="container">
-        <hr />
+    <div class="nav__drawer" id="navDrawer">
+      <div class="shell" style="padding-inline: 0">
+        <ul>
+          <li><a href="#games">Games</a></li>
+          <li><a href="#review">Session review</a></li>
+          <li><a href="#leaderboards">Leaderboards</a></li>
+          <li><a href="#mindsight">MindSight</a></li>
+          <li><a href="#odds">The odds</a></li>
+          <li><a href="#get">Get the app</a></li>
+          <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/terms-of-service.html">Terms of Service</a></li>
+        </ul>
       </div>
+    </div>
 
-      <section class="section features">
-        <div class="section__container container">
-          <h2 class="section__heading text-centered">Awesome Features</h2>
+    <main id="main">
+      <!-- =============================== HERO =============================== -->
+      <section class="hero">
+        <div class="shell hero__grid">
+          <div class="reveal">
+            <span class="hero__tag">
+              <b>v1.0</b>
+              Three games · Five MindSight exercises · Global boards
+            </span>
 
-          <section class="features">
-            <article class="features__feature text-centered" data-aos="fade-up">
-              <div class="features__icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-video features__feather-video"
-                >
-                  <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+            <h1>
+              Trust your<br />
+              <span class="grad">first instinct.</span>
+            </h1>
+
+            <p class="lede">
+              Psychic Tournament is an intuition trainer built like a game you'd actually
+              want to open. Twenty-five trials a session, a reveal worth waiting for, and
+              statistics honest enough to tell you when you're only matching chance.
+            </p>
+
+            <div class="stores">
+              <a class="store" href="#get" aria-label="Google Play — coming soon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M4.6 2.4 15.9 12 4.6 21.6a1.6 1.6 0 0 1-.6-1.3V3.7c0-.5.2-1 .6-1.3Z"
+                    fill="url(#g1)"
+                  />
+                  <path d="M15.9 12 4.6 21.6c.4.3 1 .3 1.5 0l13-7.5-3.2-2.1Z" fill="#00D4FF" />
+                  <path d="M15.9 12 6.1 2.4c-.5-.3-1.1-.3-1.5 0L15.9 12Z" fill="#8B5CF6" />
+                  <path d="m19.1 9.9-3.2 2.1 3.2 2.1c1.2-.7 1.2-3.5 0-4.2Z" fill="#FFC24B" />
+                  <defs>
+                    <linearGradient id="g1" x1="4" y1="3" x2="16" y2="21" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#8B5CF6" />
+                      <stop offset="1" stop-color="#1256C4" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <span class="store__txt">
+                  <span class="store__top">Coming soon to</span>
+                  <span class="store__name">Google Play</span>
+                </span>
+              </a>
+
+              <a class="store" href="#get" aria-label="App Store — coming soon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="url(#g2)" stroke-width="1.6" />
+                  <path
+                    d="M8 16.4 12 7.6l4 8.8"
+                    stroke="url(#g2)"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path d="M9.7 13.6h4.6" stroke="#FFC24B" stroke-width="1.8" stroke-linecap="round" />
+                  <defs>
+                    <linearGradient id="g2" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#E9E6FF" />
+                      <stop offset="1" stop-color="#00D4FF" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <span class="store__txt">
+                  <span class="store__top">Coming soon to</span>
+                  <span class="store__name">App Store</span>
+                </span>
+              </a>
+            </div>
+
+            <p class="hero__note">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5" /></svg>
+                Free to play
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5" /></svg>
+                No account required
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5" /></svg>
+                Works fully offline
+              </span>
+            </p>
+          </div>
+
+          <div class="hero__art reveal" aria-label="Psychic Tournament on Android">
+            <div class="phone phone--glow-dowsing">
+              <img
+                src="./imgs/screens/dowsing-hit.webp"
+                alt="Dowsing: a hit reveals the hidden target with a burst of gold lightning across the sonar field."
+                width="640"
+                height="1388"
+                loading="eager"
+                fetchpriority="high"
+              />
+            </div>
+            <div class="phone phone--glow-zener">
+              <img
+                src="./imgs/screens/menu-zener.webp"
+                alt="Psychic Tournament main menu with the Zener game mode selected and today's scores to beat."
+                width="720"
+                height="1562"
+                loading="eager"
+                fetchpriority="high"
+              />
+            </div>
+            <div class="phone phone--glow-seeds">
+              <img
+                src="./imgs/screens/starseeds-drop.webp"
+                alt="Star Seeds: a glowing seed falls through a lattice of stars toward one of five gates."
+                width="640"
+                height="1388"
+                loading="eager"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== STAT BAND ============================ -->
+      <section class="section section--tight">
+        <div class="shell">
+          <div class="band reveal">
+            <div class="band__cell">
+              <div class="band__n grad">3</div>
+              <div class="band__l">Scored games</div>
+            </div>
+            <div class="band__cell">
+              <div class="band__n grad">25</div>
+              <div class="band__l">Trials per session</div>
+            </div>
+            <div class="band__cell">
+              <div class="band__n grad-gold">20%</div>
+              <div class="band__l">Chance baseline</div>
+            </div>
+            <div class="band__cell">
+              <div class="band__n grad">100%</div>
+              <div class="band__l">Playable offline</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== GAME MODES =========================== -->
+      <section class="section" id="games">
+        <div class="shell">
+          <div class="section-head section-head--center reveal">
+            <span class="eyebrow">Game modes</span>
+            <h2>Three ways to <span class="grad">read the signal</span></h2>
+            <p class="lede">
+              Every mode runs the same honest contract — twenty-five trials, five choices,
+              one impression at a time. What changes is how the signal reaches you.
+            </p>
+          </div>
+
+          <div class="modes">
+            <!-- Zener -->
+            <article class="mode reveal" style="--accent: #8b5cf6; --shot-y: 28%">
+              <div class="mode__icon">
+                <svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M84 64c14 24 14 40 0 64s-14 40 0 64" />
+                  <path d="M128 64c14 24 14 40 0 64s-14 40 0 64" />
+                  <path d="M172 64c14 24 14 40 0 64s-14 40 0 64" />
                 </svg>
               </div>
-              <h3 class="features__feature-heading">Leaderboards</h3>
-              <p class="features__feature-text">
-                Monthly and daily leaderboards. Shoot for your best along with
-                others and unlock achievements!
-              </p>
-              <a href="#" class="features__cta with-arrow">Try it Here</a>
+              <p class="mode__kicker">Symbol intuition</p>
+              <h3>Zener</h3>
+              <p>Read the signal before the card turns face up.</p>
+              <ul class="mode__list">
+                <li>A shuffled 25-card deck — five each of circle, cross, waves, square and star.</li>
+                <li>Every reveal is a real card flip, with gold for a hit and red for a miss.</li>
+                <li>Streak milestones fire at 3, 7 and 10.</li>
+                <li>Each session gets its own coordinate code you can share.</li>
+              </ul>
+              <div class="mode__shot">
+                <span class="mode__meta">25 cards · 5 symbols</span>
+                <img
+                  src="./imgs/screens/zener-hit.webp"
+                  alt="The Zener board showing a hit: the waves card revealed in glowing white with a gold Hit! banner."
+                  width="720"
+                  height="1562"
+                  loading="lazy"
+                />
+              </div>
             </article>
 
-            <article class="features__feature text-centered" data-aos="fade-up">
-              <div class="features__icon">
-                <div class="features__icon">
-                  <svg
-                    width="24"
-                    height="20"
-                    viewBox="0 0 24 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="features__feather-video"
-                  >
-                    <path
-                      d="M17 18.0359V16.143C17 15.1389 16.5786 14.176 15.8284 13.466C15.0783 12.756 14.0609 12.3572 13 12.3572H5C3.93913 12.3572 2.92172 12.756 2.17157 13.466C1.42143 14.176 1 15.1389 1 16.143V18.0359"
-                      stroke="#7C3AED"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M9 8.57153C11.2091 8.57153 13 6.87659 13 4.78577C13 2.69495 11.2091 1 9 1C6.79086 1 5 2.69495 5 4.78577C5 6.87659 6.79086 8.57153 9 8.57153Z"
-                      stroke="#7C3AED"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M23 18.0359V16.1431C22.9993 15.3043 22.7044 14.4895 22.1614 13.8266C21.6184 13.1636 20.8581 12.6902 20 12.4805"
-                      stroke="#7C3AED"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M16 1.12305C16.8604 1.33155 17.623 1.80515 18.1676 2.46919C18.7122 3.13322 19.0078 3.94992 19.0078 4.79053C19.0078 5.63113 18.7122 6.44783 18.1676 7.11187C17.623 7.7759 16.8604 8.2495 16 8.45801"
-                      stroke="#7C3AED"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
+            <!-- Dowsing -->
+            <article class="mode reveal" style="--accent: #2ee6b0; --shot-y: 66%">
+              <div class="mode__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9.2" />
+                  <circle cx="12" cy="12" r="5" />
+                  <path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4" />
+                  <circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none" />
+                </svg>
+              </div>
+              <p class="mode__kicker">Hidden signals</p>
+              <h3>Dowsing</h3>
+              <p>Follow the pull and uncover the hidden target.</p>
+              <ul class="mode__list">
+                <li>Five positions on a live sonar field: NW, NE, Centre, SW and SE.</li>
+                <li>The scope breathes and sweeps between rounds — no dead air.</li>
+                <li>A hit cracks the board open with gold lightning.</li>
+                <li>Shares the same scoring, history and statistics as Zener.</li>
+              </ul>
+              <div class="mode__shot">
+                <span class="mode__meta">25 rounds · 5 positions</span>
+                <img
+                  src="./imgs/screens/dowsing-board.webp"
+                  alt="The Dowsing sonar field with five numbered positions arranged over a sweeping radar."
+                  width="640"
+                  height="1388"
+                  loading="lazy"
+                />
+              </div>
+            </article>
+
+            <!-- Star Seeds -->
+            <article class="mode reveal" style="--accent: #fb7185; --shot-y: 52%">
+              <div class="mode__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 2.6v5.2" />
+                  <circle cx="12" cy="10" r="2.2" fill="currentColor" stroke="none" />
+                  <path d="M6.2 14.4 12 10l5.8 4.4" />
+                  <path d="M4 21v-3.4M9.3 21v-3.4M14.7 21v-3.4M20 21v-3.4" />
+                </svg>
+              </div>
+              <p class="mode__kicker">Place precognition</p>
+              <h3>Star Seeds</h3>
+              <p>Name the gate the falling seed will find.</p>
+              <ul class="mode__list">
+                <li>Call one of five gates, then watch the seed fall and decide it.</li>
+                <li>A physical bounce through a lattice of stars — no two drops alike.</li>
+                <li>You're not reading a card. You're calling an outcome that doesn't exist yet.</li>
+                <li>Twenty-five drops, its own leaderboard, its own history.</li>
+              </ul>
+              <div class="mode__shot">
+                <span class="mode__meta">25 drops · 5 gates</span>
+                <img
+                  src="./imgs/screens/starseeds-board.webp"
+                  alt="The Star Seeds board: a field of gold and blue stars above five numbered gates."
+                  width="640"
+                  height="1388"
+                  loading="lazy"
+                />
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================ SESSION REVIEW ========================= -->
+      <section class="section" id="review">
+        <div class="shell">
+          <div class="section-head section-head--center reveal">
+            <span class="eyebrow">After the last card</span>
+            <h2>The session isn't over<br /><span class="grad">when the cards are</span></h2>
+            <p class="lede">
+              Every guess is written down — locally, on your device — and handed back to you
+              as something you can actually read.
+            </p>
+          </div>
+
+          <div class="row reveal">
+            <div class="row__media">
+              <div class="phone phone--glow-zener">
+                <img
+                  src="./imgs/screens/zener-results.webp"
+                  alt="Zener Session Complete screen: 11 of 25, Strong Intuition, 44% signal strength against a 20% chance baseline, and a turn-by-turn signal map."
+                  width="720"
+                  height="1562"
+                  loading="lazy"
+                />
+              </div>
+              <div class="callout callout--tl">
+                <span class="callout__ico" style="background: rgba(255, 194, 75, 0.16); color: #ffc24b">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M17 4H7v6a5 5 0 0 0 10 0V4ZM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3" /></svg>
+                </span>
+                <span>Daily best<br /><strong class="grad-gold">11 pts</strong></span>
+              </div>
+              <div class="callout callout--br">
+                <span class="callout__ico" style="background: rgba(0, 212, 255, 0.16); color: #00d4ff">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 8-8" /><path d="M17 7h4v4" /></svg>
+                </span>
+                <span>vs chance<br /><strong style="color: #00d4ff">+24 pts</strong></span>
+              </div>
+            </div>
+
+            <div class="row__text">
+              <h3>A signal map, not a score</h3>
+              <p>
+                Every turn is laid out side by side: what you read, what the card actually
+                was, and whether it landed. Twenty-five little verdicts you can scan in
+                about four seconds.
+              </p>
+              <p>
+                Above it sits the number that matters — your signal strength measured
+                against the 20% you'd expect from pure guessing, with the baseline drawn
+                right on the bar so you can't misread your own result.
+              </p>
+              <div class="pills">
+                <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.6"/></svg>Turn-by-turn grid</span>
+                <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 12h14"/></svg>Hits, misses, best run</span>
+                <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 1 0 6 8c0 7-3 9-3 9h18s-3-2-3-9Z"/></svg>Saved automatically</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row row--flip reveal">
+            <div class="row__media">
+              <div class="phone phone--glow-zener">
+                <img
+                  src="./imgs/screens/statistics.webp"
+                  alt="Zener Statistics: 42.2% overall hit rate across 72 sessions, best score 24 of 25, average 10.5, 759 total hits."
+                  width="640"
+                  height="1388"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div class="row__text">
+              <h3>Long enough to mean something</h3>
+              <p>
+                One good session is noise. A hundred of them is a shape. Psychic Tournament
+                keeps every completed session in a local database and rolls it into hit
+                rate, best score, average, total hits, and daily, weekly and monthly trends.
+              </p>
+              <p>
+                Filter by game mode or date range, drill into any single session, and delete
+                anything you don't want kept. It's your data, on your device.
+              </p>
+              <div class="pills">
+                <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Local SQLite</span>
+                <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 14 3.5-4 3 2.5L20 6"/></svg>Trends over time</span>
+                <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>Full session history</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================= LEADERBOARDS ========================== -->
+      <section class="section" id="leaderboards">
+        <div class="shell">
+          <div class="row reveal">
+            <div class="row__media">
+              <div class="gold-frame">
+                <div class="phone" style="box-shadow: none">
+                  <img
+                    src="./imgs/screens/leaderboards.webp"
+                    alt="Leaderboards screen with Zener, Dowsing and Star Seeds tabs, and All-Time, This Month and Today filters over a ranked list of scores."
+                    width="640"
+                    height="1388"
+                    loading="lazy"
+                  />
                 </div>
               </div>
-              <h3 class="features__feature-heading">Multiplayer</h3>
-              <p class="features__feature-text">
-                Play solo, with a friend, or a stranger. We have new features on
-                the way!
-              </p>
-              <a href="#" class="features__cta with-arrow">Try it Here</a>
-            </article>
+            </div>
 
-            <article class="features__feature text-centered" data-aos="fade-up">
-              <div class="features__icon">
-                <svg
-                  width="24"
-                  height="20"
-                  viewBox="0 0 24 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="features__feather-video"
-                >
-                  <path
-                    d="M17 18.0359V16.143C17 15.1389 16.5786 14.176 15.8284 13.466C15.0783 12.756 14.0609 12.3572 13 12.3572H5C3.93913 12.3572 2.92172 12.756 2.17157 13.466C1.42143 14.176 1 15.1389 1 16.143V18.0359"
-                    stroke="#7C3AED"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M9 8.57153C11.2091 8.57153 13 6.87659 13 4.78577C13 2.69495 11.2091 1 9 1C6.79086 1 5 2.69495 5 4.78577C5 6.87659 6.79086 8.57153 9 8.57153Z"
-                    stroke="#7C3AED"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M23 18.0359V16.1431C22.9993 15.3043 22.7044 14.4895 22.1614 13.8266C21.6184 13.1636 20.8581 12.6902 20 12.4805"
-                    stroke="#7C3AED"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M16 1.12305C16.8604 1.33155 17.623 1.80515 18.1676 2.46919C18.7122 3.13322 19.0078 3.94992 19.0078 4.79053C19.0078 5.63113 18.7122 6.44783 18.1676 7.11187C17.623 7.7759 16.8604 8.2495 16 8.45801"
-                    stroke="#7C3AED"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </div>
-              <h3 class="features__feature-heading">Remote Viewing</h3>
-              <p class="features__feature-text">
-                Remote Viewing game mode on the way, with leaderboards and WYSIWYG drawing tools!
+            <div class="row__text">
+              <span class="eyebrow">Leaderboards</span>
+              <h3>Play against <span class="grad-gold">the whole board</span></h3>
+              <p>
+                Score eleven or better and you're on it. Every game keeps its own rankings,
+                sliced three ways — today, this month, and all time — so a single hot
+                session still counts for something and a long run of good ones counts for
+                more.
               </p>
-              <a href="#" class="features__cta with-arrow">Try it Here</a>
-            </article>
-
-            <!-- <article class="features__feature text-centered" data-aos="fade-up">
-              <div class="features__icon">
-                <svg
-                  width="22"
-                  height="20"
-                  viewBox="0 0 22 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="features__feather-video"
-                >
-                  <path
-                    d="M21 9.51807H17L14 18.0361L8 1L5 9.51807H1"
-                    stroke="#7C3AED"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </div>
-              <h3 class="features__feature-heading">Mentions</h3>
-              <p class="features__feature-text">
-                You can record & save sections of your calls for later. You can
-                record & save sections of your calls for later
+              <p>
+                The main menu shows you the two numbers that matter before you even start:
+                today's top score, and the score to beat this month.
               </p>
-              <a href="#" class="features__cta with-arrow">Try it Here</a>
-            </article>
-
-            <article class="features__feature text-centered" data-aos="fade-up">
-              <div class="features__icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-video features__feather-video"
-                >
-                  <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                </svg>
+              <div class="pills">
+                <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Daily reset</span>
+                <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>Monthly race</span>
+                <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 9 9l-6 .9 4.4 4.2L6.2 20 12 17l5.8 3-1.2-5.9L21 9.9 15 9l-3-6Z"/></svg>Play anonymously or signed in</span>
               </div>
-              <h3 class="features__feature-heading">Mentions</h3>
-              <p class="features__feature-text">
-                You can record & save sections of your calls for later. You can
-                record & save sections of your calls for later
-              </p>
-              <a href="#" class="features__cta with-arrow">Try it Here</a>
-            </article>
-
-            <article class="features__feature text-centered" data-aos="fade-up">
-              <div class="features__icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-video features__feather-video"
-                >
-                  <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                </svg>
-              </div>
-              <h3 class="features__feature-heading">Mentions</h3>
-              <p class="features__feature-text">
-                You can record & save sections of your calls for later. You can
-                record & save sections of your calls for later
-              </p>
-              <a href="#" class="features__cta with-arrow">Try it Here</a>
-            </article> -->
-          </section>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="section cta prim-background">
-        <div class="patterns-left"></div>
-        <div class="patterns-right"></div>
-        <div class="cta__container container text-centered">
-          <h2 class="section__heading">Don't Be Left Out</h2>
-          <p>Join Hundreds of players aiming to leave a mark on the charts!</p>
+      <!-- ============================== MINDSIGHT ============================ -->
+      <section class="section" id="mindsight">
+        <div class="shell">
+          <div class="section-head section-head--center reveal">
+            <span class="eyebrow">MindSight</span>
+            <h2>Training, <span class="grad">not tournament</span></h2>
+            <p class="lede">
+              A separate set of immediate-response exercises for when you don't want a score
+              attached to everything. Short, quiet, and built around feedback you can feel
+              rather than read.
+            </p>
+          </div>
 
-          <div class="btn-group">
-            <a href="#" class="btn"> Coming Soon To Google Play! </a>
-            <!-- <a
-              href="https://github.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-secondary"
-            >
-              See Github
-            </a> -->
+          <div class="row reveal">
+            <div class="row__media" style="max-width: 300px">
+              <div class="phone phone--glow-zener">
+                <img
+                  src="./imgs/screens/mindsight-shapes.webp"
+                  alt="MindSight Shapes: a single glowing Zener circle on a violet tile against the cosmic background."
+                  width="640"
+                  height="1388"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div class="row__text">
+              <div class="ms">
+                <div class="ms__item">
+                  <div class="ms__dot" style="background: linear-gradient(140deg, #ef4444, #3b82f6, #22c55e)"></div>
+                  <h4>Colour — Freeplay</h4>
+                  <p>A non-repeating colour sequence. Call it, tap, and the app tells you what it was.</p>
+                </div>
+                <div class="ms__item">
+                  <div class="ms__dot" style="background: linear-gradient(140deg, #8b5cf6, #f43f5e)"></div>
+                  <h4>Colour — Scored</h4>
+                  <p>Twenty-five push-to-talk attempts. Say the colour out loud; the session is saved and reviewed.</p>
+                  <span class="ms__tag">Voice · Scored</span>
+                </div>
+                <div class="ms__item">
+                  <div class="ms__dot" style="background: linear-gradient(140deg, #6b2dd9, #00d4ff)"></div>
+                  <h4>Shapes</h4>
+                  <p>The five Zener symbols, one at a time, with a distinct audio cue and haptic pulse for each.</p>
+                </div>
+                <div class="ms__item">
+                  <div class="ms__dot" style="background: linear-gradient(140deg, #1256c4, #a5b4fc)"></div>
+                  <h4>Reading</h4>
+                  <p>A random three-letter word. Reach for it before you look, then check yourself.</p>
+                </div>
+              </div>
+
+              <p style="margin-top: 26px; color: var(--ink-faint); font-size: 0.9rem; font-weight: 300">
+                Haptics carry real information here — one pulse or two, counted out, so you
+                can practise with the screen face down.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================== CRAFT ============================== -->
+      <section class="section">
+        <div class="shell">
+          <div class="section-head section-head--center reveal">
+            <span class="eyebrow">Craft</span>
+            <h2>Built like <span class="grad">someone cared</span></h2>
+          </div>
+
+          <div class="grid reveal">
+            <article class="card">
+              <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 9 9l-6 .9 4.4 4.2L6.2 20 12 17l5.8 3-1.2-5.9L21 9.9 15 9l-3-6Z"/></svg></div>
+              <h3>An interface with weather</h3>
+              <p>Drifting nebulae, hundreds of individually twinkling stars, sparkles, the occasional shooting star, and a slow shimmer across the whole surface. Nothing on screen is ever quite still.</p>
+            </article>
+
+            <article class="card card--cyan">
+              <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="3"/><path d="M10 6h4"/></svg></div>
+              <h3>Reveals worth waiting for</h3>
+              <p>A perspective card flip, a hit burst in gold, a miss in deep red, and a screen shake that scales with your streak. The feedback is the reward.</p>
+            </article>
+
+            <article class="card card--mint">
+              <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 16 0v6a2 2 0 0 1-2 2h-2v-7h4M6 20H4a2 2 0 0 1 0-4h2v4Z"/></svg></div>
+              <h3>Sound and touch, tuned</h3>
+              <p>Separate music and effects volumes, distinct cues per symbol and colour, streak stingers at 3, 7 and 10, and haptics that confirm a hit without punishing a miss.</p>
+            </article>
+
+            <article class="card">
+              <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7.5 12 3l9 4.5-9 4.5-9-4.5Z"/><path d="m3 12 9 4.5L21 12M3 16.5 12 21l9-4.5"/></svg></div>
+              <h3>Offline first, genuinely</h3>
+              <p>No network, no account, no problem. Sign-in, leaderboards and analytics are optional layers on top — if any of them fail, the games don't notice.</p>
+            </article>
+
+            <article class="card card--gold">
+              <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8.5v.01M11 12h1v4h1"/></svg></div>
+              <h3>Accessible by default</h3>
+              <p>Large labelled targets, semantics on every interactive element, and full respect for your system's reduce-motion setting.</p>
+            </article>
+
+            <article class="card card--cyan">
+              <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v3M12 17.5v3M3.5 12h3M17.5 12h3"/></svg></div>
+              <h3>Session coordinates</h3>
+              <p>Every run is stamped with its own code, so a session you want to talk about is a session you can point at.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================ ODDS =============================== -->
+      <section class="section" id="odds">
+        <div class="shell">
+          <div class="glass honest reveal">
+            <div class="honest__grid">
+              <div>
+                <span class="eyebrow">The honest bit</span>
+                <h2 style="font-size: clamp(1.7rem, 3.2vw, 2.5rem)">
+                  We show you<br /><span class="grad-gold">the chance baseline</span>
+                </h2>
+                <p class="lede" style="margin-top: 1rem">
+                  Five choices means one in five. Over twenty-five trials, pure guessing
+                  averages five hits — and lands anywhere from two to eight without anything
+                  unusual happening at all.
+                </p>
+                <p style="color: var(--ink-faint); font-size: 0.92rem; font-weight: 300; margin-top: 1.2em; max-width: 52ch">
+                  So we draw that line on your results and leave it there. Psychic Tournament
+                  is a training and entertainment app, not a scientific instrument, and a good
+                  score is not evidence of anything paranormal. It's a good score. Enjoy it,
+                  then play again.
+                </p>
+              </div>
+
+              <div>
+                <div style="font-size: 0.74rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600">
+                  A 25-trial session
+                </div>
+                <div class="meter">
+                  <div class="meter__track"><div class="meter__fill"></div></div>
+                  <div class="meter__base" aria-hidden="true"></div>
+                  <div class="meter__labels">
+                    <span>0%</span>
+                    <span class="is-base">20% chance</span>
+                    <span>100%</span>
+                  </div>
+                </div>
+                <p style="margin-top: 22px; color: var(--ink-dim); font-size: 0.92rem; font-weight: 300">
+                  Beat the line consistently, across a lot of sessions, and you've got
+                  something worth paying attention to. Beat it once and you've had a nice
+                  evening.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================== GALLERY ============================= -->
+      <section class="section section--tight">
+        <div class="section-head section-head--center reveal shell">
+          <span class="eyebrow">Screens</span>
+          <h2>Have a look around</h2>
+        </div>
+
+        <div class="rail reveal">
+          <figure class="rail__item">
+            <div class="phone"><img src="./imgs/screens/menu-zener.webp" alt="Main menu with Zener selected." width="720" height="1562" loading="lazy" /></div>
+            <figcaption class="rail__cap">Main menu · Zener</figcaption>
+          </figure>
+          <figure class="rail__item">
+            <div class="phone"><img src="./imgs/screens/menu-dowsing.webp" alt="Main menu with Dowsing selected." width="640" height="1388" loading="lazy" /></div>
+            <figcaption class="rail__cap">Main menu · Dowsing</figcaption>
+          </figure>
+          <figure class="rail__item">
+            <div class="phone"><img src="./imgs/screens/menu-starseeds.webp" alt="Main menu with Star Seeds selected." width="640" height="1388" loading="lazy" /></div>
+            <figcaption class="rail__cap">Main menu · Star Seeds</figcaption>
+          </figure>
+          <figure class="rail__item">
+            <div class="phone"><img src="./imgs/screens/zener-board.webp" alt="The Zener board waiting for a symbol selection." width="640" height="1388" loading="lazy" /></div>
+            <figcaption class="rail__cap">Zener · the board</figcaption>
+          </figure>
+          <figure class="rail__item">
+            <div class="phone"><img src="./imgs/screens/dowsing-hit.webp" alt="A Dowsing hit revealed with gold lightning." width="640" height="1388" loading="lazy" /></div>
+            <figcaption class="rail__cap">Dowsing · a hit</figcaption>
+          </figure>
+          <figure class="rail__item">
+            <div class="phone"><img src="./imgs/screens/starseeds-drop.webp" alt="A Star Seeds drop in mid-fall." width="640" height="1388" loading="lazy" /></div>
+            <figcaption class="rail__cap">Star Seeds · the drop</figcaption>
+          </figure>
+          <figure class="rail__item">
+            <div class="phone"><img src="./imgs/screens/zener-results.webp" alt="Zener session results with the signal map." width="720" height="1562" loading="lazy" /></div>
+            <figcaption class="rail__cap">Session review</figcaption>
+          </figure>
+          <figure class="rail__item">
+            <div class="phone"><img src="./imgs/screens/statistics.webp" alt="Zener statistics screen." width="640" height="1388" loading="lazy" /></div>
+            <figcaption class="rail__cap">Statistics</figcaption>
+          </figure>
+          <figure class="rail__item">
+            <div class="phone"><img src="./imgs/screens/leaderboards.webp" alt="Global leaderboards." width="640" height="1388" loading="lazy" /></div>
+            <figcaption class="rail__cap">Leaderboards</figcaption>
+          </figure>
+          <figure class="rail__item">
+            <div class="phone"><img src="./imgs/screens/game-info.webp" alt="Game Info screen explaining rules and odds." width="640" height="1388" loading="lazy" /></div>
+            <figcaption class="rail__cap">Game info</figcaption>
+          </figure>
+          <figure class="rail__item">
+            <div class="phone"><img src="./imgs/screens/nav-drawer.webp" alt="The navigation drawer listing games, explore, MindSight and options." width="640" height="1388" loading="lazy" /></div>
+            <figcaption class="rail__cap">Navigation</figcaption>
+          </figure>
+          <figure class="rail__item">
+            <div class="phone"><img src="./imgs/screens/mindsight-color.webp" alt="MindSight Colour filling the screen with red during a scored attempt." width="640" height="1388" loading="lazy" /></div>
+            <figcaption class="rail__cap">MindSight · Colour</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ================================= CTA =============================== -->
+      <section class="section" id="get">
+        <div class="shell">
+          <div class="cta reveal">
+            <span class="eyebrow eyebrow--plain" style="justify-content: center">Launching soon</span>
+            <h2>Ready when <span class="grad">you are</span></h2>
+            <p class="lede">
+              Psychic Tournament is finishing up for release on Android and iOS. Free to
+              play, no account needed, and every session yours to keep.
+            </p>
+
+            <div class="stores">
+              <span class="store" role="img" aria-label="Google Play — coming soon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4.6 2.4 15.9 12 4.6 21.6a1.6 1.6 0 0 1-.6-1.3V3.7c0-.5.2-1 .6-1.3Z" fill="url(#g3)" />
+                  <path d="M15.9 12 4.6 21.6c.4.3 1 .3 1.5 0l13-7.5-3.2-2.1Z" fill="#00D4FF" />
+                  <path d="M15.9 12 6.1 2.4c-.5-.3-1.1-.3-1.5 0L15.9 12Z" fill="#8B5CF6" />
+                  <path d="m19.1 9.9-3.2 2.1 3.2 2.1c1.2-.7 1.2-3.5 0-4.2Z" fill="#FFC24B" />
+                  <defs>
+                    <linearGradient id="g3" x1="4" y1="3" x2="16" y2="21" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#8B5CF6" /><stop offset="1" stop-color="#1256C4" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <span class="store__txt">
+                  <span class="store__top">Coming soon to</span>
+                  <span class="store__name">Google Play</span>
+                </span>
+              </span>
+
+              <span class="store" role="img" aria-label="App Store — coming soon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="url(#g4)" stroke-width="1.6" />
+                  <path d="M8 16.4 12 7.6l4 8.8" stroke="url(#g4)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9.7 13.6h4.6" stroke="#FFC24B" stroke-width="1.8" stroke-linecap="round" />
+                  <defs>
+                    <linearGradient id="g4" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#E9E6FF" /><stop offset="1" stop-color="#00D4FF" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <span class="store__txt">
+                  <span class="store__top">Coming soon to</span>
+                  <span class="store__name">App Store</span>
+                </span>
+              </span>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- <footer class="section footer">
-      <section class="footer__container container">
-        <article class="footer__links">
-          <p class="footer__links-heading">Product</p>
-          <ul class="footer__links-list">
-            <li class="footer__links-item">
-              <a href="#" class="footer__link">Product</a>
-            </li>
-            <li class="footer__links-item">
-              <a href="#" class="footer__link">Product</a>
-            </li>
-            <li class="footer__links-item">
-              <a href="#" class="footer__link">Product</a>
-            </li>
-            <li class="footer__links-item">
-              <a href="#" class="footer__link">Product</a>
-            </li>
-          </ul>
-        </article>
+    <!-- =============================== FOOTER =============================== -->
+    <footer class="footer">
+      <div class="shell">
+        <div class="footer__top">
+          <div>
+            <a class="brand" href="/">
+              <img class="brand__mark" src="./imgs/logo.svg" alt="" width="34" height="34" />
+              <span>Psychic Tournament</span>
+            </a>
+            <p class="footer__blurb">
+              An intuition trainer for people who like their odds stated plainly. Built by
+              OverNineThousand.
+            </p>
+          </div>
 
-        <article class="footer__links">
-          <p class="footer__links-heading">Company</p>
-          <ul class="footer__links-list">
-            <li class="footer__links-item">
-              <a href="#" class="footer__link">About Us</a>
-            </li>
-            <li class="footer__links-item">
-              <a href="#" class="footer__link">Careers</a>
-            </li>
-            <li class="footer__links-item">
-              <a href="#" class="footer__link">Write for us</a>
-            </li>
-            <li class="footer__links-item">
-              <a href="#" class="footer__link">Team</a>
-            </li>
-          </ul>
-        </article>
+          <div class="footer__cols">
+            <div>
+              <h4>Games</h4>
+              <ul>
+                <li><a href="#games">Zener</a></li>
+                <li><a href="#games">Dowsing</a></li>
+                <li><a href="#games">Star Seeds</a></li>
+                <li><a href="#mindsight">MindSight</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Explore</h4>
+              <ul>
+                <li><a href="#review">Session review</a></li>
+                <li><a href="#leaderboards">Leaderboards</a></li>
+                <li><a href="#odds">The odds</a></li>
+                <li><a href="#get">Get the app</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Legal</h4>
+              <ul>
+                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="/terms-of-service.html">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-        <article class="footer__links">
-          <p class="footer__links-heading">Legal</p>
-          <ul class="footer__links-list">
-            <li class="footer__links-item">
-              <a href="#" class="footer__link">Terms & Conditions</a>
-            </li>
-            <li class="footer__links-item">
-              <a href="/privacy-policy.html" class="footer__link">Privacy Policy</a>
-            </li>
-            <li class="footer__links-item">
-              <a href="#" class="footer__link">Legal Documents</a>
-            </li>
-            <li class="footer__links-item">
-              <a href="#" class="footer__link">Copyright</a>
-            </li>
-          </ul>
-        </article>
-
-        <article class="footer__links">
-          <p class="footer__links-heading">Social</p>
-          <ul class="footer__links-list">
-            <li class="footer__links-item">
-              <a href="#" class="footer__link">Facebook</a>
-            </li>
-            <li class="footer__links-item">
-              <a href="#" class="footer__link">Twitter</a>
-            </li>
-            <li class="footer__links-item">
-              <a href="#" class="footer__link">Instagram</a>
-            </li>
-            <li class="footer__links-item">
-              <a href="#" class="footer__link">Youtube</a>
-            </li>
-          </ul> -->
-        </article>
-      </section>
-      <section class="container text-centered">
-        <p>
-          <small> An app built by OverNineThousand • <a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms Of Service</a> </small>
-        </p>
-      </section>
+        <div class="footer__base">
+          <p class="footer__disclaimer">
+            Psychic Tournament is for training and entertainment. It is not a scientific
+            instrument, and results are not evidence of paranormal ability.
+          </p>
+          <p>© <span id="yr">2026</span> OverNineThousand</p>
+        </div>
+      </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
     <script>
-      var hamburger = document.querySelector(".nav__hamburger");
-      var body = document.querySelector("body");
-      var mobileNavigation = document.querySelector(".nav__mobile-nav");
+      /* ---------- sticky nav ---------- */
+      var nav = document.getElementById("nav");
+      var onScroll = function () {
+        nav.classList.toggle("is-stuck", window.scrollY > 8);
+      };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
 
-      AOS.init();
+      /* ---------- mobile menu ---------- */
+      var toggle = document.getElementById("navToggle");
+      var drawer = document.getElementById("navDrawer");
+      toggle.addEventListener("click", function () {
+        var open = document.body.classList.toggle("menu-open");
+        toggle.setAttribute("aria-expanded", String(open));
+      });
+      drawer.addEventListener("click", function (e) {
+        if (e.target.tagName === "A") {
+          document.body.classList.remove("menu-open");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && document.body.classList.contains("menu-open")) {
+          document.body.classList.remove("menu-open");
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.focus();
+        }
+      });
 
-      function toggleMobileNav(e) {
-        body.classList.toggle("mobile-nav-open");
-      }
-
-      function isModalOpen() {
-        return body.classList.contains("mobile-nav-open") ? true : false;
-      }
-
-      // FIXME: Find a better way to close modal when body is clicked
-      function closeMobileMenu(e) {
-        console.log(
-          e.target.classList.contains("nav__mobiile-item") ||
-            e.target.classList.contains("nav__hamburger") ||
-            e.target.classList.contains("nav__container")
+      /* ---------- scroll reveal ---------- */
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var items = document.querySelectorAll(".reveal");
+      if (reduce || !("IntersectionObserver" in window)) {
+        items.forEach(function (el) {
+          el.classList.add("is-in");
+        });
+      } else {
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry, i) {
+              if (!entry.isIntersecting) return;
+              var el = entry.target;
+              el.style.transitionDelay = Math.min(i * 70, 210) + "ms";
+              el.classList.add("is-in");
+              io.unobserve(el);
+            });
+          },
+          { rootMargin: "0px 0px -12% 0px", threshold: 0.08 }
         );
-        if (
-          isModalOpen() &&
-          (e.target.classList.contains("nav__mobiile-item") ||
-            e.target.classList.contains("nav__hamburger"))
-        )
-          return;
+        items.forEach(function (el) {
+          io.observe(el);
+        });
 
-        body.classList.remove("mobile-nav-open");
+        // Failsafe: if the observer never fired for anything, it isn't working —
+        // show the whole page rather than leave it invisible. Checked once, so a
+        // working observer keeps its per-section reveal on the way down.
+        window.setTimeout(function () {
+          if (document.querySelector(".reveal.is-in")) return;
+          items.forEach(function (el) {
+            el.classList.add("is-in");
+          });
+        }, 3000);
       }
 
-      window.addEventListener("click", closeMobileMenu);
+      /* ---------- starfield ----------
+         Mirrors the app's background: a few hundred deterministic stars with
+         different sizes and twinkle rhythms, plus a handful of brighter sparkles. */
+      (function () {
+        var canvas = document.getElementById("stars");
+        var ctx = canvas.getContext && canvas.getContext("2d");
+        if (!ctx) return;
 
-      hamburger.addEventListener("click", toggleMobileNav);
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var stars = [];
+        var w = 0;
+        var h = 0;
+        var raf = null;
+
+        // deterministic PRNG so the sky is the same on every load
+        var seed = 20260808;
+        function rnd() {
+          seed = (seed * 1664525 + 1013904223) % 4294967296;
+          return seed / 4294967296;
+        }
+
+        function build() {
+          w = canvas.clientWidth;
+          h = canvas.clientHeight;
+          canvas.width = Math.floor(w * dpr);
+          canvas.height = Math.floor(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+          seed = 20260808;
+          var count = Math.round(Math.min(340, (w * h) / 5200));
+          stars = [];
+          for (var i = 0; i < count; i++) {
+            var bright = rnd() > 0.93;
+            stars.push({
+              x: rnd() * w,
+              y: rnd() * h,
+              r: bright ? 1.1 + rnd() * 1.3 : 0.35 + rnd() * 0.9,
+              base: bright ? 0.55 + rnd() * 0.35 : 0.15 + rnd() * 0.4,
+              speed: 0.15 + rnd() * 0.7,
+              phase: rnd() * Math.PI * 2,
+              hue: bright ? (rnd() > 0.5 ? "0,212,255" : "214,194,255") : "233,230,255"
+            });
+          }
+        }
+
+        function paint(t) {
+          ctx.clearRect(0, 0, w, h);
+          for (var i = 0; i < stars.length; i++) {
+            var s = stars[i];
+            var a = s.base * (0.55 + 0.45 * Math.sin(t * 0.001 * s.speed + s.phase));
+            ctx.beginPath();
+            ctx.fillStyle = "rgba(" + s.hue + "," + a.toFixed(3) + ")";
+            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+
+        function loop(t) {
+          paint(t);
+          raf = requestAnimationFrame(loop);
+        }
+
+        function start() {
+          build();
+          if (raf) cancelAnimationFrame(raf);
+          if (reduce) paint(0);
+          else raf = requestAnimationFrame(loop);
+        }
+
+        var resizeTimer;
+        window.addEventListener("resize", function () {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(start, 180);
+        });
+
+        // pause when the tab isn't visible
+        document.addEventListener("visibilitychange", function () {
+          if (document.hidden) {
+            if (raf) cancelAnimationFrame(raf);
+            raf = null;
+          } else if (!raf && !reduce) {
+            raf = requestAnimationFrame(loop);
+          }
+        });
+
+        start();
+      })();
+
+      document.getElementById("yr").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>

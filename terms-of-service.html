@@ -3,107 +3,120 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service • Psychic Tournament</title>
+    <meta name="description" content="The terms that apply to using the Psychic Tournament app." />
+    <meta name="theme-color" content="#0E0B1F" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://psychictournament.online/terms-of-service.html" />
+    <link rel="icon" href="./imgs/logo.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="./style.css" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDJNVSQRJX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);} 
-      gtag('js', new Date());
-      gtag('config', 'G-PDJNVSQRJX');
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-PDJNVSQRJX");
     </script>
-    <title>Terms of Service • Psychic Tournament</title>
   </head>
-  <body>
-    <nav class="nav">
-      <div class="nav__container container">
-        <div class="nav__left">
-          <a href="/">
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 30 30"
-              fill="none"
-              class="nav__logo"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M0 0H30V30H0V0Z" fill="#7C3AED" />
-            </svg>
-            <span class="nav__logo-name">Psychic Tournament</span>
-          </a>
-        </div>
-        <div class="nav__right">
-          <button class="nav__hamburger" aria-label="Menu"></button>
-          <ul class="nav__nav-desktop">
-            <li class="nav__desktop-item">
-              <a href="/privacy-policy.html" class="nav__desktop-link">Privacy Policy</a>
-            </li>
-            <li class="nav__desktop-item">
-              <a href="/terms-of-service.html" class="nav__desktop-link">Terms of Service</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="nav__mobile-nav">
-        <div class="nav__mobile-nav container">
-          <ul class="nav__mobile-links">
-            <li class="nav__mobiile-item">
-              <a href="/" class="nav__mobile-link">Home</a>
-            </li>
-            <li class="nav__mobiile-item">
-              <a href="/privacy-policy.html" class="nav__mobile-link">Privacy Policy</a>
-            </li>
-            <li class="nav__mobiile-item">
-              <a href="/terms-of-service.html" class="nav__mobile-link">Terms of Service</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
 
-    <main class="section">
-      <section class="section__container container">
-        <div class="policy">
-          <h1>Terms of Service</h1>
-          <div id="md"></div>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <!-- Cosmic background -->
+    <div class="sky" aria-hidden="true"></div>
+    <div class="sky-glow sky-glow--violet" aria-hidden="true"></div>
+    <div class="sky-glow sky-glow--blue" aria-hidden="true"></div>
+    <canvas id="stars" aria-hidden="true"></canvas>
+
+    <header class="nav is-stuck" id="nav">
+      <div class="shell nav__inner">
+        <a class="brand" href="/">
+          <img class="brand__mark" src="./imgs/logo.svg" alt="" width="34" height="34" />
+          <span>Psychic Tournament</span>
+        </a>
+        <nav aria-label="Primary">
+          <ul class="nav__links">
+            <li><a class="nav__link" href="/#games">Games</a></li>
+            <li><a class="nav__link" href="/#mindsight">MindSight</a></li>
+            <li><a class="nav__link" href="/privacy-policy.html">Privacy</a></li>
+            <li><a class="nav__link" href="/terms-of-service.html">Terms</a></li>
+          </ul>
+        </nav>
+        <div class="nav__right">
+          <a class="btn btn--primary btn--sm" href="/#get">Get the app</a>
+          <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navDrawer">
+            <span></span>
+          </button>
         </div>
-      </section>
+      </div>
+    </header>
+
+    <div class="nav__drawer" id="navDrawer">
+      <div class="shell" style="padding-inline: 0">
+        <ul>
+          <li><a href="/#games">Games</a></li>
+          <li><a href="/#mindsight">MindSight</a></li>
+          <li><a href="/#get">Get the app</a></li>
+          <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/terms-of-service.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <main id="main" class="section doc">
+      <div class="shell">
+        <div class="doc__head reveal">
+          <span class="eyebrow">Legal</span>
+          <h1 class="grad">Terms of Service</h1>
+          <p class="doc__meta">Psychic Tournament by Over Nine Thousand</p>
+        </div>
+        <div class="glass doc__body reveal">
+          <div id="md"><p>Loading the current terms…</p></div>
+          <noscript>
+            <p>
+              This page renders the terms from
+              <a href="./terms-of-service.md">terms-of-service.md</a>. Please open that file
+              directly, or enable JavaScript.
+            </p>
+          </noscript>
+        </div>
+      </div>
     </main>
 
-    <section class="container text-centered">
-      <p>
-        <small>
-          An app built by OverNineThousand •
-          <a href="/privacy-policy.html">Privacy Policy</a>
-          •
-          <a href="/terms-of-service.html">Terms of Service</a>
-        </small>
-      </p>
-    </section>
-
+    <footer class="footer">
+      <div class="shell">
+        <div class="footer__base" style="border-top: 0; padding-top: 0">
+          <p class="footer__disclaimer">
+            Psychic Tournament is for training and entertainment. It is not a scientific
+            instrument, and results are not evidence of paranormal ability.
+          </p>
+          <p>
+            <a href="/">Home</a> &nbsp;·&nbsp;
+            <a href="/privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
+            <a href="/terms-of-service.html">Terms of Service</a> &nbsp;·&nbsp;
+            © <span id="yr">2026</span> OverNineThousand
+          </p>
+        </div>
+      </div>
+    </footer>
     <script>
-      // Mobile menu handling, mirroring privacy-policy.html
-      var hamburger = document.querySelector(".nav__hamburger");
-      var body = document.querySelector("body");
-      function toggleMobileNav(e) {
-        body.classList.toggle("mobile-nav-open");
-      }
-      function isModalOpen() {
-        return body.classList.contains("mobile-nav-open") ? true : false;
-      }
-      function closeMobileMenu(e) {
-        if (
-          isModalOpen() &&
-          (e.target.classList.contains("nav__mobiile-item") ||
-            e.target.classList.contains("nav__hamburger"))
-        )
-          return;
-        body.classList.remove("mobile-nav-open");
-      }
-      window.addEventListener("click", closeMobileMenu);
-      hamburger && hamburger.addEventListener("click", toggleMobileNav);
+      var toggle = document.getElementById("navToggle");
+      toggle.addEventListener("click", function () {
+        var open = document.body.classList.toggle("menu-open");
+        toggle.setAttribute("aria-expanded", String(open));
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          document.body.classList.remove("menu-open");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      });
+      document.getElementById("yr").textContent = new Date().getFullYear();
     </script>
 
-    <!-- Load and render Markdown safely -->
+<!-- Load and render Markdown safely -->
     <script>
       async function loadMarkdown() {
         try {
@@ -162,7 +175,10 @@
             return s;
           }
 
-          document.getElementById('md').innerHTML = mdToHtml(text);
+          // The page already renders its own <h1>; drop the one the Markdown
+          // opens with so the title doesn't appear twice.
+          const rendered = mdToHtml(text).replace(/^\s*<h1>.*?<\/h1>/i, '');
+          document.getElementById('md').innerHTML = rendered;
         } catch (e) {
           document.getElementById('md').innerHTML = '<p>Unable to load Terms at this time.</p>';
           console.error(e);
@@ -172,4 +188,3 @@
     </script>
   </body>
 </html>
-
