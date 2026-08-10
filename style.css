@@ -1326,56 +1326,167 @@ body.menu-open .nav__drawer {
 }
 
 /* --------------------------------------------------------------------------
-   MindSight strip
+   MindSight — the two practice modes
    -------------------------------------------------------------------------- */
 
-.ms {
+.ms-modes {
   display: grid;
-  gap: 18px;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 20px;
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: clamp(42px, 5vw, 70px);
 }
 
-.ms__item {
-  padding: 22px 20px;
-  border-radius: var(--r);
+.ms-mode {
+  --accent: var(--violet-lt);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(26px, 3vw, 38px);
+  border-radius: var(--r-xl);
   border: 1px solid var(--line);
-  background: rgba(17, 15, 35, 0.5);
-  transition: border-color 0.3s ease, transform 0.3s ease;
+  background: rgba(17, 15, 35, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.3, 1), border-color 0.35s ease;
 }
 
-.ms__item:hover {
-  transform: translateY(-4px);
-  border-color: rgba(139, 92, 246, 0.45);
+.ms-mode:hover {
+  transform: translateY(-5px);
+  border-color: color-mix(in srgb, var(--accent) 50%, transparent);
 }
 
-.ms__dot {
-  width: 34px;
-  height: 34px;
-  border-radius: 11px;
-  margin-bottom: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+/* the recommended path gets the gold treatment used for standout results in-app */
+.ms-mode--rec {
+  --accent: var(--gold);
+  border-color: rgba(255, 194, 75, 0.4);
+  background: linear-gradient(165deg, rgba(255, 194, 75, 0.08), transparent 48%),
+    rgba(17, 15, 35, 0.6);
+  box-shadow: 0 0 60px -32px rgba(255, 194, 75, 0.85);
 }
 
-.ms__item h4 {
-  font-size: 0.98rem;
+.ms-mode__badge {
+  position: absolute;
+  top: -11px;
+  left: clamp(26px, 3vw, 38px);
+  padding: 0.36em 0.85em;
+  border-radius: 999px;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #2a1a02;
+  background: linear-gradient(120deg, #ffd77a, var(--gold-deep));
+  box-shadow: 0 6px 18px -8px rgba(255, 194, 75, 0.9);
+}
+
+.ms-mode__ico {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 38%, transparent);
+}
+
+.ms-mode__ico svg {
+  width: 24px;
+  height: 24px;
+}
+
+.ms-mode h3 {
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
   margin-bottom: 0.4em;
 }
 
-.ms__item p {
-  font-size: 0.84rem;
-  color: var(--ink-faint);
+.ms-mode__lead {
+  color: var(--ink-dim);
   font-weight: 300;
-  line-height: 1.5;
+  margin-bottom: 1.5em;
 }
 
-.ms__tag {
-  display: inline-block;
-  margin-top: 0.9em;
-  font-size: 0.66rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.ms-steps {
+  list-style: none;
+  display: grid;
+  gap: 0.9em;
+  margin-bottom: 1.6em;
+  counter-reset: ms-step;
+}
+
+.ms-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8em;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--ink-dim);
+}
+
+.ms-steps li::before {
+  counter-increment: ms-step;
+  content: counter(ms-step);
+  flex: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.74rem;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+}
+
+.ms-drills {
+  list-style: none;
+  display: grid;
+  gap: 0.7em;
+  margin-top: auto;
+  padding-top: 0.5em;
+}
+
+.ms-drills li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75em;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--ink-faint);
+  font-weight: 300;
+}
+
+.ms-drills b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.ms-drills__dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  flex: none;
+  /* optically centre against the first line when the label wraps */
+  margin-top: 0.05em;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.ms-note {
+  margin-top: 1.4em;
+  padding-top: 1.2em;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+@media (min-width: 860px) {
+  .ms-modes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 /* --------------------------------------------------------------------------
