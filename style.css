@@ -457,6 +457,16 @@ h3 {
   border-color: rgba(139, 92, 246, 0.6);
 }
 
+.store--live {
+  cursor: pointer;
+  border-color: rgba(255, 194, 75, 0.42);
+}
+
+.store--live:hover,
+.store--live:focus-visible {
+  border-color: rgba(255, 194, 75, 0.85);
+}
+
 .store::after {
   /* slow gold shimmer, echoing AnimatedGoldenBorder */
   content: "";
