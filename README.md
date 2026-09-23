@@ -11,8 +11,13 @@ custom domain lives in `CNAME`.
 | `index.html` | The landing page. All content, plus ~120 lines of inline JS (sticky nav, mobile menu, scroll reveal, starfield). |
 | `style.css` | The whole design system. Tokens at the top mirror `lib/theme/app_theme.dart` in the app. |
 | `privacy-policy.html` | Static privacy policy. |
+| `account-deletion.html` | Account deletion instructions Google Play links to. `noindex`, not in the sitemap. |
+| `404.html` | GitHub Pages serves this for any missing path. |
+| `robots.txt`, `sitemap.xml` | Crawl rules and the URL list for Search Console. Bump `<lastmod>` when a page changes. |
+| `site.webmanifest` | Icons and the two store listings as `related_applications`. |
 | `terms-of-service.html` | Shell that renders `terms-of-service.md` client-side — edit the Markdown, not the HTML. |
 | `imgs/logo.svg` | Logo mark (also the favicon). |
+| `imgs/apple-touch-icon.png`, `icon-*.png`, `favicon-48.png` | PNG icons, resized from the app's 1024px iOS icon with `sips`. |
 | `imgs/og-cover.png` | 1200×630 social share card. |
 | `imgs/screens/*.webp` | App screenshots, captured from the Android emulator. |
 
@@ -67,6 +72,17 @@ Exit demo mode with `adb shell am broadcast -a com.android.systemui.demo -e comm
 
 ## Store links
 
-Both store buttons are currently non-linking "Coming soon" badges (`.store` in `style.css`,
-two instances in `index.html` — hero and closing CTA). When a listing goes live, give the
-badge a real `href` and change `Coming soon to` → `Get it on` / `Download on the`.
+Both listings are live. The store URLs appear in several places, so change all of them together:
+
+- the two badge groups in `index.html` (hero and closing CTA) and the footer's Download column;
+- `installUrl`, `downloadUrl` and `sameAs` in the JSON-LD block;
+- `site.webmanifest`, and the `apple-itunes-app` meta tag (App Store id only).
+
+A small script puts the visitor's own store first (Android → Google Play, iPhone/iPad → App
+Store) and sends a `store_click` event to Google Analytics.
+
+## SEO notes
+
+- The FAQ appears twice: as visible `<details>` in the page and as `FAQPage` JSON-LD in the
+  head. Google requires the two to match, so edit both.
+- There is no `aggregateRating` in the JSON-LD on purpose. Only add one from real store ratings.

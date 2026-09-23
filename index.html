@@ -3,39 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Psychic Tournament — Train your intuition. Trust your first instinct.</title>
+    <title>Psychic Tournament: ESP Test &amp; Intuition Game for Android and iOS</title>
     <meta
       name="description"
-      content="Three scored intuition games, blindfold MindSight training you can do alone, and statistics honest enough to tell you when you're only matching chance. A beautifully crafted, offline-first trainer for Android and iOS."
+      content="A free ESP and intuition game for Android and iOS. Test yourself with Zener cards, Dowsing and Star Seed, scored honestly against a 20% chance baseline."
     />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#0E0B1F" />
     <meta name="color-scheme" content="dark" />
     <link rel="canonical" href="https://psychictournament.online/" />
-    <link rel="icon" href="./imgs/logo.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="./imgs/logo.svg" />
+
+    <link rel="icon" href="/imgs/logo.svg" type="image/svg+xml" />
+    <link rel="icon" href="/imgs/favicon-48.png" type="image/png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/imgs/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- iOS Safari shows a native "Open / Get" banner for the App Store listing -->
+    <meta name="apple-itunes-app" content="app-id=6806195000" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Psychic Tournament" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://psychictournament.online/" />
     <meta property="og:title" content="Psychic Tournament — Trust your first instinct." />
     <meta
       property="og:description"
-      content="Three scored intuition games, blindfold MindSight training you can do alone, and statistics honest enough to tell you when you're only matching chance."
+      content="Zener cards, Dowsing and Star Seed, scored against a 20% chance baseline. Daily Vision, conviction calls, global leaderboards and blindfold MindSight training. Free on Android and iOS."
     />
     <meta property="og:image" content="https://psychictournament.online/imgs/og-cover.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Psychic Tournament: three phones showing Dowsing, the main menu and Star Seed under the line “Trust your first instinct.”" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Psychic Tournament — Trust your first instinct." />
     <meta
       name="twitter:description"
-      content="Three scored intuition games, blindfold MindSight training you can do alone, and statistics that show you the chance baseline."
+      content="An ESP and intuition game that shows you the chance baseline. Free on Android and iOS."
     />
     <meta name="twitter:image" content="https://psychictournament.online/imgs/og-cover.png" />
+    <meta name="twitter:image:alt" content="Psychic Tournament app screens under the line “Trust your first instinct.”" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&amp;display=swap" />
+    <link rel="stylesheet" href="/style.css" />
 
     <!-- Opt into scroll-reveal only when JS is available; see .js .reveal in style.css -->
     <script>
@@ -55,14 +66,105 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Psychic Tournament",
-        "applicationCategory": "GameApplication",
-        "operatingSystem": "Android, iOS",
-        "url": "https://psychictournament.online/",
-        "description": "Three scored intuition games, blindfold MindSight training, and local statistics measured against a 20% chance baseline.",
-        "author": { "@type": "Organization", "name": "OverNineThousand" },
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://psychictournament.online/#developer",
+            "name": "OverNineThousand",
+            "url": "https://overninethousand.com/",
+            "email": "overninethousanddevelopment@gmail.com"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://psychictournament.online/#website",
+            "url": "https://psychictournament.online/",
+            "name": "Psychic Tournament",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://psychictournament.online/#developer" }
+          },
+          {
+            "@type": "MobileApplication",
+            "@id": "https://psychictournament.online/#app",
+            "name": "Psychic Tournament",
+            "alternateName": "Psychic Tournament: ESP & Intuition Game",
+            "url": "https://psychictournament.online/",
+            "description": "An ESP and intuition training game. Three ranked disciplines — Zener cards, Dowsing and Star Seed — each scored over 25 calls against a 20% chance baseline, with Daily Vision challenges, conviction calls, global leaderboards, XP and cosmic ranks, and blindfold MindSight training.",
+            "applicationCategory": "GameApplication",
+            "applicationSubCategory": "Puzzle",
+            "genre": ["Puzzle", "Brain training", "Casual"],
+            "operatingSystem": "Android, iOS, iPadOS",
+            "image": "https://psychictournament.online/imgs/icon-512.png",
+            "screenshot": [
+              "https://psychictournament.online/imgs/screens/menu-zener.webp",
+              "https://psychictournament.online/imgs/screens/zener-hit.webp",
+              "https://psychictournament.online/imgs/screens/dowsing-hit.webp",
+              "https://psychictournament.online/imgs/screens/starseeds-drop.webp",
+              "https://psychictournament.online/imgs/screens/zener-results.webp",
+              "https://psychictournament.online/imgs/screens/leaderboards.webp"
+            ],
+            "installUrl": [
+              "https://play.google.com/store/apps/details?id=com.overninethousand.psychictournament",
+              "https://apps.apple.com/us/app/psychic-tournament/id6806195000"
+            ],
+            "downloadUrl": [
+              "https://play.google.com/store/apps/details?id=com.overninethousand.psychictournament",
+              "https://apps.apple.com/us/app/psychic-tournament/id6806195000"
+            ],
+            "sameAs": [
+              "https://play.google.com/store/apps/details?id=com.overninethousand.psychictournament",
+              "https://apps.apple.com/us/app/psychic-tournament/id6806195000"
+            ],
+            "author": { "@id": "https://psychictournament.online/#developer" },
+            "publisher": { "@id": "https://psychictournament.online/#developer" },
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://psychictournament.online/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is Psychic Tournament free?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Psychic Tournament is free to download on Google Play and the App Store. It is supported by ads shown between sessions, never during a call." }
+              },
+              {
+                "@type": "Question",
+                "name": "How does the ESP test work?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Each session is 25 calls. Every call has five equally likely answers, so guessing alone averages five hits, or 20%. Your result is always shown against that chance line, so you can see whether you are above it, at it, or below it." }
+              },
+              {
+                "@type": "Question",
+                "name": "What are Zener cards?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Zener cards are the five-symbol set — circle, cross, waves, square and star — designed by psychologist Karl Zener for J. B. Rhine's ESP experiments at Duke University in the 1930s. Psychic Tournament's Zener mode draws each card independently, so there is no deck to count." }
+              },
+              {
+                "@type": "Question",
+                "name": "What is a good score?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Chance averages 5 out of 25, and anything from 2 to 8 happens routinely by luck. Scoring 11 or better puts you on the global leaderboard; by chance alone that happens about once in 180 sessions." }
+              },
+              {
+                "@type": "Question",
+                "name": "Does Psychic Tournament work offline?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. The games, MindSight training, history and statistics all work without a connection and without an account. Leaderboards, Daily Vision and player profiles need a connection, and Daily Vision and profiles need you to sign in." }
+              },
+              {
+                "@type": "Question",
+                "name": "What is MindSight training?",
+                "acceptedAnswer": { "@type": "Answer", "text": "MindSight is blindfolded perception practice that normally needs a partner to hold up targets. Psychic Tournament takes the partner's place: it picks a colour, shape or word and tells you the answer through sound and vibration, so you can practise alone with the blindfold on." }
+              },
+              {
+                "@type": "Question",
+                "name": "Is multiplayer coming?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Realtime telepathy multiplayer is in development: one player sees the outcome and sends it, the other receives it and calls it, and both are rewarded when the message gets through. A psychokinesis mode called Mind Move is also on the way." }
+              },
+              {
+                "@type": "Question",
+                "name": "Does a high score prove psychic ability?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No. Psychic Tournament is a training and entertainment app, not a scientific instrument. A good score is a good score; only a result that holds up above chance across many sessions is worth paying attention to." }
+              }
+            ]
+          }
+        ]
       }
     </script>
   </head>
@@ -76,21 +178,46 @@
     <div class="sky-glow sky-glow--blue" aria-hidden="true"></div>
     <canvas id="stars" aria-hidden="true"></canvas>
 
+    <!-- Store-badge glyphs, defined once and <use>d by every badge -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="gp-left" x1="4" y1="3" x2="16" y2="21" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#8B5CF6" />
+          <stop offset="1" stop-color="#1256C4" />
+        </linearGradient>
+        <linearGradient id="as-edge" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#E9E6FF" />
+          <stop offset="1" stop-color="#00D4FF" />
+        </linearGradient>
+        <symbol id="ico-play" viewBox="0 0 24 24">
+          <path d="M4.6 2.4 15.9 12 4.6 21.6a1.6 1.6 0 0 1-.6-1.3V3.7c0-.5.2-1 .6-1.3Z" fill="url(#gp-left)" />
+          <path d="M15.9 12 4.6 21.6c.4.3 1 .3 1.5 0l13-7.5-3.2-2.1Z" fill="#00D4FF" />
+          <path d="M15.9 12 6.1 2.4c-.5-.3-1.1-.3-1.5 0L15.9 12Z" fill="#8B5CF6" />
+          <path d="m19.1 9.9-3.2 2.1 3.2 2.1c1.2-.7 1.2-3.5 0-4.2Z" fill="#FFC24B" />
+        </symbol>
+        <symbol id="ico-appstore" viewBox="0 0 24 24" fill="none">
+          <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="url(#as-edge)" stroke-width="1.6" />
+          <path d="M8 16.4 12 7.6l4 8.8" stroke="url(#as-edge)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M9.7 13.6h4.6" stroke="#FFC24B" stroke-width="1.8" stroke-linecap="round" />
+        </symbol>
+      </defs>
+    </svg>
+
     <!-- ================================ NAV ================================ -->
     <header class="nav" id="nav">
       <div class="shell nav__inner">
         <a class="brand" href="/">
-          <img class="brand__mark" src="./imgs/logo.svg" alt="" width="34" height="34" />
+          <img class="brand__mark" src="/imgs/logo.svg" alt="" width="34" height="34" />
           <span>Psychic Tournament</span>
         </a>
 
         <nav aria-label="Primary">
           <ul class="nav__links">
             <li><a class="nav__link" href="#games">Games</a></li>
-            <li><a class="nav__link" href="#review">Session review</a></li>
-            <li><a class="nav__link" href="#leaderboards">Leaderboards</a></li>
+            <li><a class="nav__link" href="#progression">Progression</a></li>
             <li><a class="nav__link" href="#mindsight">MindSight</a></li>
-            <li><a class="nav__link" href="#odds">The odds</a></li>
+            <li><a class="nav__link" href="#coming-soon">Coming soon</a></li>
+            <li><a class="nav__link" href="#faq">FAQ</a></li>
           </ul>
         </nav>
 
@@ -107,14 +234,14 @@
       <div class="shell" style="padding-inline: 0">
         <ul>
           <li><a href="#games">Games</a></li>
+          <li><a href="#progression">Progression</a></li>
           <li><a href="#review">Session review</a></li>
           <li><a href="#leaderboards">Leaderboards</a></li>
           <li><a href="#mindsight">MindSight</a></li>
+          <li><a href="#coming-soon">Coming soon</a></li>
           <li><a href="#odds">The odds</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#get">Get the app</a></li>
-          <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="/terms-of-service.html">Terms of Service</a></li>
-          <li><a href="/account-deletion.html">Delete Account</a></li>
         </ul>
       </div>
     </div>
@@ -125,68 +252,48 @@
         <div class="shell hero__grid">
           <div class="reveal">
             <span class="hero__tag">
-              <b>v1.0</b>
-              Three games · MindSight training · Global boards
+              <span class="live-dot" aria-hidden="true"></span>
+              Out now on Android &amp; iOS
             </span>
 
             <h1>
+              <span class="h1-kicker">The ESP &amp; intuition game</span>
               Trust your<br />
               <span class="grad">first instinct.</span>
             </h1>
 
             <p class="lede">
-              Psychic Tournament is an intuition trainer built like a game you'd actually
-              want to open. Twenty-five trials a session, a reveal worth waiting for, and
-              statistics honest enough to tell you when you're only matching chance.
+              Call the card, find the hidden signal, name the gate before the seed falls.
+              Three ranked games, a Daily Vision you only get one shot at, and results
+              shown against the 20% you'd get by guessing, so you always know where you
+              really stand.
             </p>
 
-            <div class="stores">
-              <a class="store" href="#get" aria-label="Google Play — coming soon">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path
-                    d="M4.6 2.4 15.9 12 4.6 21.6a1.6 1.6 0 0 1-.6-1.3V3.7c0-.5.2-1 .6-1.3Z"
-                    fill="url(#g1)"
-                  />
-                  <path d="M15.9 12 4.6 21.6c.4.3 1 .3 1.5 0l13-7.5-3.2-2.1Z" fill="#00D4FF" />
-                  <path d="M15.9 12 6.1 2.4c-.5-.3-1.1-.3-1.5 0L15.9 12Z" fill="#8B5CF6" />
-                  <path d="m19.1 9.9-3.2 2.1 3.2 2.1c1.2-.7 1.2-3.5 0-4.2Z" fill="#FFC24B" />
-                  <defs>
-                    <linearGradient id="g1" x1="4" y1="3" x2="16" y2="21" gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#8B5CF6" />
-                      <stop offset="1" stop-color="#1256C4" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+            <div class="stores" data-stores>
+              <a
+                class="store store--live"
+                data-store="google_play"
+                href="https://play.google.com/store/apps/details?id=com.overninethousand.psychictournament"
+                target="_blank"
+                rel="noopener"
+                aria-label="Get Psychic Tournament on Google Play"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-play" /></svg>
                 <span class="store__txt">
-                  <span class="store__top">Coming soon to</span>
+                  <span class="store__top">Get it on</span>
                   <span class="store__name">Google Play</span>
                 </span>
               </a>
 
               <a
                 class="store store--live"
+                data-store="app_store"
                 href="https://apps.apple.com/us/app/psychic-tournament/id6806195000"
                 target="_blank"
                 rel="noopener"
                 aria-label="Download Psychic Tournament on the App Store"
               >
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="url(#g2)" stroke-width="1.6" />
-                  <path
-                    d="M8 16.4 12 7.6l4 8.8"
-                    stroke="url(#g2)"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path d="M9.7 13.6h4.6" stroke="#FFC24B" stroke-width="1.8" stroke-linecap="round" />
-                  <defs>
-                    <linearGradient id="g2" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#E9E6FF" />
-                      <stop offset="1" stop-color="#00D4FF" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-appstore" /></svg>
                 <span class="store__txt">
                   <span class="store__top">Download on the</span>
                   <span class="store__name">App Store</span>
@@ -201,30 +308,29 @@
               </span>
               <span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5" /></svg>
-                No account required
+                No account needed
               </span>
               <span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5" /></svg>
-                Works fully offline
+                Plays offline
               </span>
             </p>
           </div>
 
-          <div class="hero__art reveal" aria-label="Psychic Tournament on Android">
+          <div class="hero__art reveal">
             <div class="phone phone--glow-dowsing">
               <img
-                src="./imgs/screens/dowsing-hit.webp"
+                src="/imgs/screens/dowsing-hit.webp"
                 alt="Dowsing: a hit reveals the hidden target with a burst of gold lightning across the sonar field."
                 width="640"
                 height="1388"
                 loading="eager"
-                fetchpriority="high"
               />
             </div>
             <div class="phone phone--glow-zener">
               <img
-                src="./imgs/screens/menu-zener.webp"
-                alt="Psychic Tournament main menu with the Zener game mode selected and today's scores to beat."
+                src="/imgs/screens/menu-zener.webp"
+                alt="Psychic Tournament main menu with the Zener game selected and today's scores to beat."
                 width="720"
                 height="1562"
                 loading="eager"
@@ -233,8 +339,8 @@
             </div>
             <div class="phone phone--glow-seeds">
               <img
-                src="./imgs/screens/starseeds-drop.webp"
-                alt="Star Seeds: a glowing seed falls through a lattice of stars toward one of five gates."
+                src="/imgs/screens/starseeds-drop.webp"
+                alt="Star Seed: a glowing seed falls through a constellation toward one of five gates."
                 width="640"
                 height="1388"
                 loading="eager"
@@ -245,24 +351,24 @@
       </section>
 
       <!-- ============================== STAT BAND ============================ -->
-      <section class="section section--tight">
+      <section class="section section--tight" aria-label="Psychic Tournament at a glance">
         <div class="shell">
           <div class="band reveal">
             <div class="band__cell">
               <div class="band__n grad">3</div>
-              <div class="band__l">Scored games</div>
+              <div class="band__l">Ranked games</div>
             </div>
             <div class="band__cell">
               <div class="band__n grad">25</div>
-              <div class="band__l">Trials per session</div>
+              <div class="band__l">Calls a session</div>
             </div>
             <div class="band__cell">
               <div class="band__n grad-gold">20%</div>
               <div class="band__l">Chance baseline</div>
             </div>
             <div class="band__cell">
-              <div class="band__n grad">100%</div>
-              <div class="band__l">Playable offline</div>
+              <div class="band__n grad">45</div>
+              <div class="band__l">Achievements</div>
             </div>
           </div>
         </div>
@@ -272,11 +378,12 @@
       <section class="section" id="games">
         <div class="shell">
           <div class="section-head section-head--center reveal">
-            <span class="eyebrow">Game modes</span>
+            <span class="eyebrow">The games</span>
             <h2>Three ways to <span class="grad">read the signal</span></h2>
             <p class="lede">
-              Every mode runs the same honest contract — twenty-five trials, five choices,
-              one impression at a time. What changes is how the signal reaches you.
+              Every game plays by the same rules: twenty-five calls, five equally likely
+              answers, one impression at a time. What changes is how the signal reaches
+              you.
             </p>
           </div>
 
@@ -292,17 +399,17 @@
               </div>
               <p class="mode__kicker">Symbol intuition</p>
               <h3>Zener</h3>
-              <p>Read the signal before the card turns face up.</p>
+              <p>The classic ESP card test. Read the symbol before the card turns face up.</p>
               <ul class="mode__list">
-                <li>A shuffled 25-card deck — five each of circle, cross, waves, square and star.</li>
-                <li>Every reveal is a real card flip, with gold for a hit and red for a miss.</li>
-                <li>Streak milestones fire at 3, 7 and 10.</li>
+                <li>Circle, cross, waves, square or star, each one drawn fresh every turn. There's no deck, so there's nothing to count.</li>
+                <li>Every reveal is a real card flip: gold for a hit, and the true card named when you miss.</li>
+                <li><span>Streaks climb from <em>Focused</em> to <em>Third Eye</em>, <em>True Sight</em> and beyond, and the sky lights up with them.</span></li>
                 <li>Each session gets its own coordinate code you can share.</li>
               </ul>
               <div class="mode__shot">
-                <span class="mode__meta">25 cards · 5 symbols</span>
+                <span class="mode__meta">25 calls · 5 symbols</span>
                 <img
-                  src="./imgs/screens/zener-hit.webp"
+                  src="/imgs/screens/zener-hit.webp"
                   alt="The Zener board showing a hit: the waves card revealed in glowing white with a gold Hit! banner."
                   width="720"
                   height="1562"
@@ -323,17 +430,17 @@
               </div>
               <p class="mode__kicker">Hidden signals</p>
               <h3>Dowsing</h3>
-              <p>Follow the pull and uncover the hidden target.</p>
+              <p>Follow the pull and uncover what's buried beneath the field.</p>
               <ul class="mode__list">
-                <li>Five positions on a live sonar field: NW, NE, Centre, SW and SE.</li>
-                <li>The scope breathes and sweeps between rounds — no dead air.</li>
+                <li>Five covered positions on a live sonar field: NW, NE, centre, SW and SE.</li>
+                <li>Tap where you feel it. The covers slide away and the target answers.</li>
                 <li>A hit cracks the board open with gold lightning.</li>
-                <li>Shares the same scoring, history and statistics as Zener.</li>
+                <li>Its own leaderboard, history and statistics.</li>
               </ul>
               <div class="mode__shot">
-                <span class="mode__meta">25 rounds · 5 positions</span>
+                <span class="mode__meta">25 calls · 5 positions</span>
                 <img
-                  src="./imgs/screens/dowsing-board.webp"
+                  src="/imgs/screens/dowsing-board.webp"
                   alt="The Dowsing sonar field with five numbered positions arranged over a sweeping radar."
                   width="640"
                   height="1388"
@@ -342,7 +449,7 @@
               </div>
             </article>
 
-            <!-- Star Seeds -->
+            <!-- Star Seed -->
             <article class="mode reveal" style="--accent: #fb7185; --shot-y: 52%">
               <div class="mode__icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -352,20 +459,20 @@
                   <path d="M4 21v-3.4M9.3 21v-3.4M14.7 21v-3.4M20 21v-3.4" />
                 </svg>
               </div>
-              <p class="mode__kicker">Place precognition</p>
-              <h3>Star Seeds</h3>
-              <p>Name the gate the falling seed will find.</p>
+              <p class="mode__kicker">Precognition</p>
+              <h3>Star Seed</h3>
+              <p>Name the gate before the seed finds it. The outcome doesn't exist yet.</p>
               <ul class="mode__list">
-                <li>Call one of five gates, then watch the seed fall and decide it.</li>
-                <li>A physical bounce through a lattice of stars — no two drops alike.</li>
-                <li>You're not reading a card. You're calling an outcome that doesn't exist yet.</li>
-                <li>Twenty-five drops, its own leaderboard, its own history.</li>
+                <li>Call one of five gates. The same tap releases the seed.</li>
+                <li>It bounces through a fresh constellation every turn: prisms deflect, pulsars throw, vortices pull, and every star shatters on its second hit.</li>
+                <li>Every gate is equally likely. Your call never touches the physics.</li>
+                <li>Miss, and the gate you called stays lit in rose so you can see both halves.</li>
               </ul>
               <div class="mode__shot">
                 <span class="mode__meta">25 drops · 5 gates</span>
                 <img
-                  src="./imgs/screens/starseeds-board.webp"
-                  alt="The Star Seeds board: a field of gold and blue stars above five numbered gates."
+                  src="/imgs/screens/starseeds-board.webp"
+                  alt="The Star Seed board: a field of gold and blue stars above five numbered gates."
                   width="640"
                   height="1388"
                   loading="lazy"
@@ -376,15 +483,133 @@
         </div>
       </section>
 
+      <!-- ============================= PROGRESSION =========================== -->
+      <section class="section" id="progression">
+        <div class="shell">
+          <div class="section-head section-head--center reveal">
+            <span class="eyebrow">New in 1.0</span>
+            <h2>Reasons to <span class="grad">come back tomorrow</span></h2>
+            <p class="lede">
+              Chance is the same every day. What changes is what you do with it. Every
+              reward below is earned by playing well, never by just playing a lot.
+            </p>
+          </div>
+
+          <div class="bento">
+            <!-- Conviction calls -->
+            <article class="feat feat--wide feat--conviction reveal">
+              <div class="feat__text">
+                <p class="feat__kicker">Conviction calls</p>
+                <h3>Stake it when <span class="grad-gold">you're sure</span></h3>
+                <p>
+                  You get five conviction calls a session. Arm one when the impression
+                  feels different. The screen goes dark, the choice burns violet, and
+                  <b>CALL!</b> lights up in gold. Land it for <b>+100 XP</b>, more than a
+                  whole average session. Miss and it costs you nothing.
+                </p>
+                <p class="feat__sub">
+                  The app tracks conviction calls on their own, because the interesting
+                  question isn't whether you beat chance. It's whether you know <em>when</em>
+                  you do.
+                </p>
+              </div>
+              <div class="conv" aria-hidden="true">
+                <div class="conv__pips"><i class="is-spent"></i><i class="is-spent"></i><i></i><i></i><i></i></div>
+                <div class="conv__call">CALL!</div>
+                <div class="conv__row">
+                  <span class="conv__tile"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" /></svg></span>
+                  <span class="conv__tile"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" /></svg></span>
+                  <span class="conv__tile is-armed"><svg viewBox="0 0 24 24"><path d="M7 5c2 3.5 2 5.5 0 9s-2 5 0 6M12 5c2 3.5 2 5.5 0 9s-2 5 0 6M17 5c2 3.5 2 5.5 0 9s-2 5 0 6" /></svg></span>
+                  <span class="conv__tile"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="1" /></svg></span>
+                  <span class="conv__tile"><svg viewBox="0 0 24 24"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9L12 3.5Z" /></svg></span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Daily Vision -->
+            <article class="feat feat--daily reveal">
+              <p class="feat__kicker">Daily Vision</p>
+              <h3>One shot. Everyone's even.</h3>
+              <p>
+                One attempt per game, per day, and no retries. The volume advantage
+                disappears. A lucky twelve from someone who played once beats a lucky
+                twelve from someone who played two hundred times, because nobody did.
+              </p>
+              <div class="dv" aria-hidden="true">
+                <span class="dv__btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z" /><circle cx="12" cy="12" r="2.6" /></svg>
+                  Daily Vision
+                </span>
+                <span class="dv__meta">Its own board · every score counts · XP ×2</span>
+              </div>
+            </article>
+
+            <!-- Levels & ranks -->
+            <article class="feat feat--ranks reveal">
+              <p class="feat__kicker">Levels &amp; cosmic ranks</p>
+              <h3>400 levels. Ten titles.</h3>
+              <p>
+                XP flies into your meter for every hit, streak rung and personal best:
+                a new best score, a new best streak, or beating your own ten-session
+                average.
+              </p>
+              <ol class="ranks" aria-label="Cosmic ranks, lowest to highest">
+                <li>Observer</li>
+                <li>Seeker</li>
+                <li>Intuitive</li>
+                <li>Psychic</li>
+                <li>Resonant Psychic</li>
+                <li>Psychic Master</li>
+                <li>Astral Visionary</li>
+                <li>Grandmaster Perceptionist</li>
+                <li>Cosmic Paragon</li>
+                <li>Universal Sovereign</li>
+              </ol>
+            </article>
+
+            <!-- Day streaks -->
+            <article class="feat feat--streak reveal">
+              <p class="feat__kicker">Day streaks</p>
+              <h3>Turn up, get paid</h3>
+              <p>
+                Your first ranked session each day pays a streak bonus that keeps growing.
+                Miss a day and a free monthly freeze covers it automatically. You never
+                have to buy one or remember to use it.
+              </p>
+              <div class="streak" aria-hidden="true">
+                <span><b>Day 1</b>100 XP</span>
+                <span><b>Day 7</b>300 XP</span>
+                <span class="is-hot"><b>Day 30</b>1,000 XP</span>
+              </div>
+            </article>
+
+            <!-- Achievements & profiles -->
+            <article class="feat feat--profile reveal">
+              <p class="feat__kicker">Profiles &amp; achievements</p>
+              <h3>Tap any score</h3>
+              <p>
+                Every name on a leaderboard opens a profile with level, cosmic rank, best
+                score and streak, days at #1, and a grid of 45 achievements. Reach 11 and
+                your profile carries the gold <b>Verified Psychic</b> banner.
+              </p>
+              <div class="ach" aria-hidden="true">
+                <i class="is-on"></i><i class="is-on"></i><i class="is-on is-gold"></i><i class="is-on"></i><i></i><i></i>
+                <i class="is-on"></i><i></i><i></i><i class="is-on"></i><i></i><i></i>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <!-- ============================ SESSION REVIEW ========================= -->
       <section class="section" id="review">
         <div class="shell">
           <div class="section-head section-head--center reveal">
-            <span class="eyebrow">After the last card</span>
+            <span class="eyebrow">After the last call</span>
             <h2>The session isn't over<br /><span class="grad">when the cards are</span></h2>
             <p class="lede">
-              Every guess is written down — locally, on your device — and handed back to you
-              as something you can actually read.
+              Every call is saved on your device and handed back to you in a form you can
+              actually read.
             </p>
           </div>
 
@@ -392,7 +617,7 @@
             <div class="row__media">
               <div class="phone phone--glow-zener">
                 <img
-                  src="./imgs/screens/zener-results.webp"
+                  src="/imgs/screens/zener-results.webp"
                   alt="Zener Session Complete screen: 11 of 25, Strong Intuition, 44% signal strength against a 20% chance baseline, and a turn-by-turn signal map."
                   width="720"
                   height="1562"
@@ -414,20 +639,20 @@
             </div>
 
             <div class="row__text">
-              <h3>A signal map, not a score</h3>
+              <h3>A signal map, not just a score</h3>
               <p>
-                Every turn is laid out side by side: what you read, what the card actually
-                was, and whether it landed. Twenty-five little verdicts you can scan in
-                about four seconds.
+                Every turn is laid out side by side: what you called, what it actually
+                was, and whether it landed. Twenty-five small verdicts you can take in
+                at a glance.
               </p>
               <p>
-                Above it sits the number that matters — your signal strength measured
-                against the 20% you'd expect from pure guessing, with the baseline drawn
-                right on the bar so you can't misread your own result.
+                Above them sits the number that matters: your signal strength against the
+                20% you'd expect from pure guessing, with the baseline drawn right on the
+                bar so you can't misread your own result.
               </p>
               <div class="pills">
                 <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.6"/></svg>Turn-by-turn grid</span>
-                <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 12h14"/></svg>Hits, misses, best run</span>
+                <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 12h14"/></svg>XP breakdown</span>
                 <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 1 0 6 8c0 7-3 9-3 9h18s-3-2-3-9Z"/></svg>Saved automatically</span>
               </div>
             </div>
@@ -437,7 +662,7 @@
             <div class="row__media">
               <div class="phone phone--glow-zener">
                 <img
-                  src="./imgs/screens/statistics.webp"
+                  src="/imgs/screens/statistics.webp"
                   alt="Zener Statistics: 42.2% overall hit rate across 72 sessions, best score 24 of 25, average 10.5, 759 total hits."
                   width="640"
                   height="1388"
@@ -449,16 +674,17 @@
             <div class="row__text">
               <h3>Long enough to mean something</h3>
               <p>
-                One good session is noise. A hundred of them is a shape. Psychic Tournament
-                keeps every completed session in a local database and rolls it into hit
-                rate, best score, average, total hits, and daily, weekly and monthly trends.
+                One good session is noise. A hundred of them start to form a pattern.
+                Every completed session goes into a local database and rolls up into hit
+                rate, best score, average, total hits, and daily, weekly and monthly
+                trends.
               </p>
               <p>
-                Filter by game mode or date range, drill into any single session, and delete
-                anything you don't want kept. It's your data, on your device.
+                Filter by game or date range, open any single session, and delete
+                anything you don't want to keep. It's your data, on your device.
               </p>
               <div class="pills">
-                <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Local SQLite</span>
+                <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Stored on device</span>
                 <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 14 3.5-4 3 2.5L20 6"/></svg>Trends over time</span>
                 <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>Full session history</span>
               </div>
@@ -475,8 +701,8 @@
               <div class="gold-frame">
                 <div class="phone" style="box-shadow: none">
                   <img
-                    src="./imgs/screens/leaderboards.webp"
-                    alt="Leaderboards screen with Zener, Dowsing and Star Seeds tabs, and All-Time, This Month and Today filters over a ranked list of scores."
+                    src="/imgs/screens/leaderboards.webp"
+                    alt="Leaderboards screen with Zener, Dowsing and Star Seed tabs, and All-Time, This Month and Today filters over a ranked list of scores."
                     width="640"
                     height="1388"
                     loading="lazy"
@@ -489,19 +715,19 @@
               <span class="eyebrow">Leaderboards</span>
               <h3>Play against <span class="grad-gold">the whole board</span></h3>
               <p>
-                Score eleven or better and you're on it. Every game keeps its own rankings,
-                sliced three ways — today, this month, and all time — so a single hot
-                session still counts for something and a long run of good ones counts for
-                more.
+                Score eleven or better and you're on it. That happens about once in 180
+                sessions by luck alone. Every game keeps its own score and streak boards
+                for today, this month and all time, plus a Daily Vision board where
+                every score counts.
               </p>
               <p>
-                The main menu shows you the two numbers that matter before you even start:
-                today's top score, and the score to beat this month.
+                When someone takes the top spot, everyone in the app hears about it live.
+                The main menu shows the scores to beat before you start.
               </p>
               <div class="pills">
                 <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Daily reset</span>
-                <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>Monthly race</span>
-                <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 9 9l-6 .9 4.4 4.2L6.2 20 12 17l5.8 3-1.2-5.9L21 9.9 15 9l-3-6Z"/></svg>Play anonymously or signed in</span>
+                <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 1 0 6 8c0 7-3 9-3 9h18s-3-2-3-9Z"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>Live high-score alerts</span>
+                <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 9 9l-6 .9 4.4 4.2L6.2 20 12 17l5.8 3-1.2-5.9L21 9.9 15 9l-3-6Z"/></svg>Anonymous or signed in</span>
               </div>
             </div>
           </div>
@@ -515,10 +741,10 @@
             <span class="eyebrow">MindSight</span>
             <h2>Learn to see <span class="grad">with your intuition</span></h2>
             <p class="lede">
-              MindSight is a training practice built on an unusual premise: that perception
-              doesn't have to travel through the eyes. Practitioners work blindfolded until
-              what they call <em>Windows</em> begin to open — stretches of full sight with the
-              eyes still covered. It's a skill that's been getting a lot more attention lately.
+              MindSight is blindfold training built on an unusual premise: that perception
+              doesn't have to travel through the eyes. Practitioners work blindfolded
+              until what they call <em>Windows</em> begin to open, stretches of clear sight
+              with the eyes still covered.
             </p>
           </div>
 
@@ -526,7 +752,7 @@
             <div class="row__media" style="max-width: 300px">
               <div class="phone phone--glow-zener">
                 <img
-                  src="./imgs/screens/mindsight-shapes.webp"
+                  src="/imgs/screens/mindsight-shapes.webp"
                   alt="MindSight Shapes: a single glowing Zener circle on a violet tile against the cosmic background."
                   width="640"
                   height="1388"
@@ -538,20 +764,20 @@
             <div class="row__text">
               <h3>The hard part is <span class="grad">practising alone</span></h3>
               <p>
-                Traditionally this training takes two people. One holds up a card; the other
-                sits blindfolded and calls it; the first one says whether it was right. No
-                partner, no practice — which is why most people who want to try it never
-                really get started.
+                This training usually takes two people. One holds up a card, the other
+                sits blindfolded and calls it, and the first says whether it was right. No
+                partner, no practice, which is why most people who want to try it never
+                really start.
               </p>
               <p>
-                Psychic Tournament takes the second person's job. It chooses the target, waits
-                for your call, and tells you what it actually was — through sound and haptics,
-                so none of it needs your eyes. Blindfold on, phone in hand, practise as long
-                as you like.
+                Psychic Tournament does the partner's job. It picks the target, waits for
+                your call, and tells you what it was through sound and vibration, so
+                none of it needs your eyes. The screen stays awake while you focus. Put the
+                blindfold on and practise as long as you like.
               </p>
               <div class="pills">
                 <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z"/><path d="m4 4 16 16"/></svg>Blindfold-first</span>
-                <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 16 0v6a2 2 0 0 1-2 2h-2v-7h4M6 20H4a2 2 0 0 1 0-4h2v4Z"/></svg>Spoken &amp; haptic feedback</span>
+                <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 16 0v6a2 2 0 0 1-2 2h-2v-7h4M6 20H4a2 2 0 0 1 0-4h2v4Z"/></svg>Sound &amp; haptic answers</span>
                 <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18v-1.5a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4V18"/><circle cx="9" cy="6.5" r="3.5"/><path d="m17 8 2 2 4-4"/></svg>No partner needed</span>
               </div>
             </div>
@@ -559,7 +785,7 @@
 
           <div class="ms-modes reveal">
             <article class="ms-mode ms-mode--rec">
-              <span class="ms-mode__badge">Recommended path</span>
+              <span class="ms-mode__badge">Start here</span>
               <div class="ms-mode__ico">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z" />
@@ -569,27 +795,27 @@
               </div>
               <h3>Freeplay</h3>
               <p class="ms-mode__lead">
-                Unscored, unhurried, and the best place to start. You call the target out loud
-                to yourself, tap, and the app tells you what it was.
+                Unscored and unhurried. Say your call to yourself, tap, and the app tells
+                you what it was.
               </p>
               <ol class="ms-steps">
-                <li>Put the blindfold on and open a Freeplay drill.</li>
-                <li>Let an impression form, and make your guess.</li>
+                <li>Put the blindfold on and open a drill.</li>
+                <li>Let an impression form, and make your call.</li>
                 <li>Tap anywhere on the screen.</li>
-                <li>The app announces the answer, so you know straight away whether your MindSight was accurate.</li>
+                <li>The answer plays as a sound and a count of pulses, so you know straight away whether you saw it.</li>
               </ol>
               <ul class="ms-drills">
                 <li>
-                  <span class="ms-drills__dot" style="background: linear-gradient(140deg, #ef4444, #3b82f6, #22c55e)"></span>
-                  <span><b>Colours</b> — six, never twice in a row</span>
+                  <span class="ms-drills__dot" style="background: linear-gradient(140deg, #ef4444, #22c55e 35%, #3b82f6 55%, #facc15 75%, #a855f7)"></span>
+                  <span><b>Colours</b> · red, green, blue, yellow and purple, one to five pulses</span>
                 </li>
                 <li>
                   <span class="ms-drills__dot" style="background: linear-gradient(140deg, #6b2dd9, #00d4ff)"></span>
-                  <span><b>Shapes</b> — the five Zener symbols</span>
+                  <span><b>Shapes</b> · the five Zener symbols</span>
                 </li>
                 <li>
                   <span class="ms-drills__dot" style="background: linear-gradient(140deg, #1256c4, #a5b4fc)"></span>
-                  <span><b>Words</b> — a random three-letter word</span>
+                  <span><b>Reading</b> · a random three-letter word</span>
                 </li>
               </ul>
             </article>
@@ -602,22 +828,206 @@
                   <path d="M12 18v3.5" />
                 </svg>
               </div>
-              <h3>Scored</h3>
+              <h3>Scored Colour</h3>
               <p class="ms-mode__lead">
-                Same blindfold, same drill — but now you say it out loud and the app keeps the
-                book. For when you want to know whether you're actually improving.
+                Same blindfold, same drill. This time you say the colour out loud and
+                the app keeps score. Use it when you want to know whether you're really
+                improving.
               </p>
               <ol class="ms-steps">
                 <li>Press and hold anywhere on the screen.</li>
-                <li>Speak what your MindSight gives you.</li>
+                <li>Speak the colour your MindSight gives you.</li>
                 <li>Release, and get an immediate hit or miss.</li>
-                <li>Twenty-five attempts are scored and saved, so your progress is there to look back on.</li>
+                <li>Twenty-five calls are scored and saved to your history, with the same 20% baseline as every other game.</li>
               </ol>
               <p class="ms-note">
-                Hits and misses come back as sound and vibration as well as on screen — one
-                pulse or two, counted out — so you can keep the blindfold on right through a
-                scored session and still know exactly how you're doing.
+                Hits and misses come back as sound and vibration as well as on screen, so
+                you can keep the blindfold on for a whole scored session. MindSight scores
+                stay on your device and off the leaderboards, because nobody can check
+                whose eyes were covered.
               </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================= COMING SOON =========================== -->
+      <section class="section" id="coming-soon">
+        <div class="shell">
+          <div class="section-head section-head--center reveal">
+            <span class="eyebrow">Coming soon</span>
+            <h2>What's <span class="grad">on the horizon</span></h2>
+            <p class="lede">
+              Two new ways to play are in development. Both will arrive as free updates.
+            </p>
+          </div>
+
+          <div class="soon">
+            <!-- Realtime telepathy -->
+            <article class="soon__card reveal" style="--accent: #00d4ff">
+              <div class="soon__art">
+                <svg viewBox="0 0 400 220" role="img" aria-label="A sender's Star Seed board with the seed landing in gate three, a signal travelling across to the receiver's board, and gate three lighting up on the receiver's side.">
+                  <defs>
+                    <linearGradient id="tp-beam" x1="0" x2="1">
+                      <stop offset="0" stop-color="#FB7185" />
+                      <stop offset=".5" stop-color="#A78BFA" />
+                      <stop offset="1" stop-color="#00D4FF" />
+                    </linearGradient>
+                    <radialGradient id="tp-orb">
+                      <stop offset="0" stop-color="#fff" />
+                      <stop offset=".45" stop-color="#C4B5FD" />
+                      <stop offset="1" stop-color="#8B5CF6" stop-opacity="0" />
+                    </radialGradient>
+                  </defs>
+
+                  <!-- sender panel -->
+                  <rect class="tp-panel" x="16" y="18" width="136" height="186" rx="18" />
+                  <text class="tp-label" x="84" y="42" text-anchor="middle">SENDER</text>
+                  <g class="tp-stars">
+                    <circle cx="44" cy="70" r="2.2" /><circle cx="84" cy="62" r="2.6" /><circle cx="124" cy="72" r="2" />
+                    <circle cx="60" cy="96" r="2.4" /><circle cx="106" cy="98" r="2.2" /><circle cx="40" cy="124" r="2" />
+                    <circle cx="84" cy="126" r="2.6" /><circle cx="128" cy="122" r="2.2" /><circle cx="62" cy="150" r="2.2" /><circle cx="108" cy="148" r="2.4" />
+                  </g>
+                  <g class="tp-gates">
+                    <rect x="28" y="176" width="20" height="16" rx="4" />
+                    <rect x="52" y="176" width="20" height="16" rx="4" />
+                    <rect x="76" y="176" width="20" height="16" rx="4" />
+                    <rect x="100" y="176" width="20" height="16" rx="4" />
+                    <rect x="124" y="176" width="20" height="16" rx="4" />
+                  </g>
+                  <rect class="tp-gate-hit" x="76" y="176" width="20" height="16" rx="4">
+                    <animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;.36;.4;.92;1" values="0;0;1;1;0" />
+                  </rect>
+                  <circle class="tp-seed" r="5">
+                    <animateMotion dur="4.8s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;.38;1" path="M84 46 C 92 70, 60 84, 66 104 S 104 124, 94 146 S 84 168, 86 182" />
+                    <animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;.02;.38;.42;1" values="0;1;1;0;0" />
+                  </circle>
+
+                  <!-- the link -->
+                  <path class="tp-beam" d="M156 111 C 178 84, 190 138, 200 111 S 224 84, 244 111" stroke="url(#tp-beam)" />
+                  <circle r="9" fill="url(#tp-orb)">
+                    <animateMotion dur="4.8s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;.42;.66;1" path="M156 111 C 178 84, 190 138, 200 111 S 224 84, 244 111" />
+                    <animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;.41;.43;.65;.68;1" values="0;0;1;1;0;0" />
+                  </circle>
+
+                  <!-- receiver panel -->
+                  <rect class="tp-panel" x="248" y="18" width="136" height="186" rx="18" />
+                  <text class="tp-label" x="316" y="42" text-anchor="middle">RECEIVER</text>
+                  <g class="tp-rings">
+                    <circle cx="316" cy="110" r="18" />
+                    <circle cx="316" cy="110" r="32" />
+                    <circle cx="316" cy="110" r="46" />
+                  </g>
+                  <circle class="tp-pulse" cx="316" cy="110" r="10">
+                    <animate attributeName="r" dur="4.8s" repeatCount="indefinite" keyTimes="0;.66;.9;1" values="10;10;52;52" />
+                    <animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;.66;.68;.9;1" values="0;0;.9;0;0" />
+                  </circle>
+                  <g class="tp-gates">
+                    <rect x="260" y="176" width="20" height="16" rx="4" />
+                    <rect x="284" y="176" width="20" height="16" rx="4" />
+                    <rect x="308" y="176" width="20" height="16" rx="4" />
+                    <rect x="332" y="176" width="20" height="16" rx="4" />
+                    <rect x="356" y="176" width="20" height="16" rx="4" />
+                  </g>
+                  <rect class="tp-gate-recv" x="308" y="176" width="20" height="16" rx="4">
+                    <animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;.7;.76;.94;1" values="0;0;1;1;0" />
+                  </rect>
+                </svg>
+              </div>
+              <div class="soon__body">
+                <div class="soon__meta">
+                  <span class="soon__badge">In development</span>
+                  <span class="soon__kind">Realtime multiplayer</span>
+                </div>
+                <h3>Telepathy</h3>
+                <p>
+                  Every game becomes a two-player test of sending and receiving. One player
+                  sees the outcome and holds it in mind. The other tunes in and calls it.
+                  Get the message through and <b>you both earn the reward</b>.
+                </p>
+                <div class="soon__example">
+                  <p class="soon__example-h">In Star Seed</p>
+                  <ol class="soon__steps">
+                    <li><span>The <b>sender</b> chooses where to drop the seed and watches where it lands.</span></li>
+                    <li>They send the result, telepathically.</li>
+                    <li><span>The <b>receiver</b> picks the gate they feel coming through, then watches the round play out.</span></li>
+                  </ol>
+                </div>
+              </div>
+            </article>
+
+            <!-- Mind Move -->
+            <article class="soon__card reveal" style="--accent: #ffc24b">
+              <div class="soon__art">
+                <svg viewBox="0 0 400 220" role="img" aria-label="An arena with its top edge called in gold. A comet curves across the field toward that edge, and three reset pips sit beneath it.">
+                  <defs>
+                    <linearGradient id="mm-tail" x1="1" x2="0">
+                      <stop offset="0" stop-color="#FFE7A8" />
+                      <stop offset=".35" stop-color="#FFC24B" stop-opacity=".7" />
+                      <stop offset="1" stop-color="#FB7185" stop-opacity="0" />
+                    </linearGradient>
+                    <radialGradient id="mm-head">
+                      <stop offset="0" stop-color="#fff" />
+                      <stop offset=".5" stop-color="#FFE7A8" />
+                      <stop offset="1" stop-color="#FFC24B" stop-opacity="0" />
+                    </radialGradient>
+                  </defs>
+
+                  <rect class="mm-arena" x="40" y="20" width="320" height="160" rx="14" />
+                  <!-- the called edge -->
+                  <path class="mm-edge" d="M60 20h280">
+                    <animate attributeName="stroke-opacity" dur="5s" repeatCount="indefinite" keyTimes="0;.74;.78;.92;1" values=".55;.55;1;1;.55" />
+                  </path>
+                  <text class="mm-call" x="200" y="11" text-anchor="middle">CALLED: TOP</text>
+                  <text class="mm-dim" x="200" y="172" text-anchor="middle">BOTTOM</text>
+                  <text class="mm-dim" x="58" y="104" text-anchor="middle" transform="rotate(-90 58 104)">LEFT</text>
+                  <text class="mm-dim" x="342" y="104" text-anchor="middle" transform="rotate(90 342 104)">RIGHT</text>
+
+                  <!-- influence rings around the comet's path -->
+                  <path class="mm-trace" d="M200 112 C 150 132, 118 98, 150 76 S 236 90, 244 62 S 214 30, 206 22" />
+
+                  <g>
+                    <animateMotion dur="5s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyPoints="0;1;1" keyTimes="0;.76;1" keySplines=".4 0 .6 1;0 0 1 1" path="M200 112 C 150 132, 118 98, 150 76 S 236 90, 244 62 S 214 30, 206 22" />
+                    <animate attributeName="opacity" dur="5s" repeatCount="indefinite" keyTimes="0;.04;.76;.84;1" values="0;1;1;0;0" />
+                    <ellipse cx="-22" cy="0" rx="26" ry="5" fill="url(#mm-tail)" />
+                    <circle r="8" fill="url(#mm-head)" />
+                    <circle r="3" fill="#fff" />
+                  </g>
+
+                  <!-- impact flash on the called edge -->
+                  <circle class="mm-flash" cx="206" cy="22" r="4">
+                    <animate attributeName="r" dur="5s" repeatCount="indefinite" keyTimes="0;.76;.9;1" values="4;4;30;30" />
+                    <animate attributeName="opacity" dur="5s" repeatCount="indefinite" keyTimes="0;.75;.77;.9;1" values="0;0;1;0;0" />
+                  </circle>
+
+                  <!-- resets -->
+                  <text class="mm-dim" x="150" y="206" text-anchor="end">RESETS</text>
+                  <circle class="mm-pip" cx="166" cy="202" r="6" />
+                  <circle class="mm-pip" cx="186" cy="202" r="6" />
+                  <circle class="mm-pip is-used" cx="206" cy="202" r="6" />
+                  <text class="mm-dim" x="222" y="206">TAP TO FREEZE</text>
+                </svg>
+              </div>
+              <div class="soon__body">
+                <div class="soon__meta">
+                  <span class="soon__badge">In development</span>
+                  <span class="soon__kind">Psychokinesis</span>
+                </div>
+                <h3>Mind Move</h3>
+                <p>
+                  Call one of the four edges of the screen. A comet appears and sets off
+                  in a random direction, and your job is to <b>bend its path with
+                  intention</b> until it strikes the edge you called.
+                </p>
+                <div class="soon__example">
+                  <p class="soon__example-h">Three resets per session</p>
+                  <p class="soon__example-p">
+                    Feel it slipping out of your influence? Tap the screen to freeze every
+                    comet and relaunch in a new random direction. You get three a session,
+                    so choose the moment carefully.
+                  </p>
+                </div>
+              </div>
             </article>
           </div>
         </div>
@@ -635,37 +1045,37 @@
             <article class="card">
               <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 9 9l-6 .9 4.4 4.2L6.2 20 12 17l5.8 3-1.2-5.9L21 9.9 15 9l-3-6Z"/></svg></div>
               <h3>An interface with weather</h3>
-              <p>Drifting nebulae, hundreds of individually twinkling stars, sparkles, the occasional shooting star, and a slow shimmer across the whole surface. Nothing on screen is ever quite still.</p>
+              <p>Drifting nebulae, hundreds of twinkling stars, the odd shooting star, and a sky that flares when your streak climbs. Nothing on screen is ever quite still.</p>
             </article>
 
             <article class="card card--cyan">
               <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="3"/><path d="M10 6h4"/></svg></div>
-              <h3>Reveals worth waiting for</h3>
-              <p>A perspective card flip, a hit burst in gold, a miss in deep red, and a screen shake that scales with your streak. The feedback is the reward.</p>
+              <h3>Hits celebrate. Misses don't nag.</h3>
+              <p>A hit bursts in gold and shakes the screen harder as your streak grows. A miss quietly shows you the answer and moves on. Four calls in five are misses, and none of them are rubbed in.</p>
             </article>
 
             <article class="card card--mint">
               <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 16 0v6a2 2 0 0 1-2 2h-2v-7h4M6 20H4a2 2 0 0 1 0-4h2v4Z"/></svg></div>
-              <h3>Sound and touch, tuned</h3>
-              <p>Separate music and effects volumes, distinct cues per symbol and colour, streak stingers at 3, 7 and 10, and haptics that confirm a hit without punishing a miss.</p>
+              <h3>Every game has its own voice</h3>
+              <p>Each game has its own sound set, mixed to one consistent loudness. There are separate music and effects volumes, and haptics that confirm a hit without punishing a miss.</p>
             </article>
 
             <article class="card">
               <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7.5 12 3l9 4.5-9 4.5-9-4.5Z"/><path d="m3 12 9 4.5L21 12M3 16.5 12 21l9-4.5"/></svg></div>
               <h3>Offline first, genuinely</h3>
-              <p>No network, no account, no problem. Sign-in, leaderboards and analytics are optional layers on top — if any of them fail, the games don't notice.</p>
+              <p>No network, no account, no problem. Sign-in, leaderboards and profiles sit on top as optional extras. If any of them fail, the games keep working.</p>
             </article>
 
             <article class="card card--gold">
               <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8.5v.01M11 12h1v4h1"/></svg></div>
               <h3>Accessible by default</h3>
-              <p>Large labelled targets, semantics on every interactive element, and full respect for your system's reduce-motion setting.</p>
+              <p>Large labelled targets, screen-reader labels on every control, digits that don't jump around as they count, and full respect for your system's reduce-motion setting.</p>
             </article>
 
             <article class="card card--cyan">
-              <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v3M12 17.5v3M3.5 12h3M17.5 12h3"/></svg></div>
-              <h3>Session coordinates</h3>
-              <p>Every run is stamped with its own code, so a session you want to talk about is a session you can point at.</p>
+              <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2.5"/><path d="M8 21h8"/></svg></div>
+              <h3>Made for tablets, too</h3>
+              <p>On iPad and larger screens, the whole interface scales up to fill the display instead of leaving a phone-sized column in the middle.</p>
             </article>
           </div>
         </div>
@@ -678,26 +1088,26 @@
             <div class="honest__grid">
               <div>
                 <span class="eyebrow">The honest bit</span>
-                <h2 style="font-size: clamp(1.7rem, 3.2vw, 2.5rem)">
+                <h2 class="honest__h">
                   We show you<br /><span class="grad-gold">the chance baseline</span>
                 </h2>
                 <p class="lede" style="margin-top: 1rem">
-                  Five choices means one in five. Over twenty-five trials, pure guessing
-                  averages five hits — and lands anywhere from two to eight without anything
-                  unusual happening at all.
+                  Five choices means one in five. Over twenty-five calls, pure guessing
+                  averages five hits, and anywhere from two to eight is perfectly
+                  ordinary.
                 </p>
-                <p style="color: var(--ink-faint); font-size: 0.92rem; font-weight: 300; margin-top: 1.2em; max-width: 52ch">
-                  So we draw that line on your results and leave it there. Psychic Tournament
-                  is a training and entertainment app, not a scientific instrument, and a good
-                  score is not evidence of anything paranormal. It's a good score. Enjoy it,
-                  then play again.
+                <p class="honest__fine">
+                  The games are built so that line is true. Zener draws every card
+                  independently, so there's no deck to count. Star Seed decides where the
+                  seed will land before you call, and your call never touches the physics.
+                  Psychic Tournament is a training and entertainment app, not a scientific
+                  instrument, and a good score isn't proof of anything paranormal. It's a good
+                  score. Enjoy it, then play again.
                 </p>
               </div>
 
               <div>
-                <div style="font-size: 0.74rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600">
-                  A 25-trial session
-                </div>
+                <div class="honest__cap">A 25-call session</div>
                 <div class="meter">
                   <div class="meter__track"><div class="meter__fill"></div></div>
                   <div class="meter__base" aria-hidden="true"></div>
@@ -707,9 +1117,9 @@
                     <span>100%</span>
                   </div>
                 </div>
-                <p style="margin-top: 22px; color: var(--ink-dim); font-size: 0.92rem; font-weight: 300">
-                  Beat the line consistently, across a lot of sessions, and you've got
-                  something worth paying attention to. Beat it once and you've had a nice
+                <p class="honest__foot">
+                  Beat the line consistently, across a lot of sessions, and you have
+                  something worth paying attention to. Beat it once and you've had a good
                   evening.
                 </p>
               </div>
@@ -719,61 +1129,141 @@
       </section>
 
       <!-- =============================== GALLERY ============================= -->
-      <section class="section section--tight">
+      <section class="section section--tight" aria-labelledby="screens-h">
         <div class="section-head section-head--center reveal shell">
           <span class="eyebrow">Screens</span>
-          <h2>Have a look around</h2>
+          <h2 id="screens-h">Have a look around</h2>
         </div>
 
         <div class="rail reveal">
           <figure class="rail__item">
-            <div class="phone"><img src="./imgs/screens/menu-zener.webp" alt="Main menu with Zener selected." width="720" height="1562" loading="lazy" /></div>
+            <div class="phone"><img src="/imgs/screens/menu-zener.webp" alt="Main menu with Zener selected." width="720" height="1562" loading="lazy" /></div>
             <figcaption class="rail__cap">Main menu · Zener</figcaption>
           </figure>
           <figure class="rail__item">
-            <div class="phone"><img src="./imgs/screens/menu-dowsing.webp" alt="Main menu with Dowsing selected." width="640" height="1388" loading="lazy" /></div>
+            <div class="phone"><img src="/imgs/screens/menu-dowsing.webp" alt="Main menu with Dowsing selected." width="640" height="1388" loading="lazy" /></div>
             <figcaption class="rail__cap">Main menu · Dowsing</figcaption>
           </figure>
           <figure class="rail__item">
-            <div class="phone"><img src="./imgs/screens/menu-starseeds.webp" alt="Main menu with Star Seeds selected." width="640" height="1388" loading="lazy" /></div>
-            <figcaption class="rail__cap">Main menu · Star Seeds</figcaption>
+            <div class="phone"><img src="/imgs/screens/menu-starseeds.webp" alt="Main menu with Star Seed selected." width="640" height="1388" loading="lazy" /></div>
+            <figcaption class="rail__cap">Main menu · Star Seed</figcaption>
           </figure>
           <figure class="rail__item">
-            <div class="phone"><img src="./imgs/screens/zener-board.webp" alt="The Zener board waiting for a symbol selection." width="640" height="1388" loading="lazy" /></div>
+            <div class="phone"><img src="/imgs/screens/zener-board.webp" alt="The Zener board waiting for a symbol call." width="640" height="1388" loading="lazy" /></div>
             <figcaption class="rail__cap">Zener · the board</figcaption>
           </figure>
           <figure class="rail__item">
-            <div class="phone"><img src="./imgs/screens/dowsing-hit.webp" alt="A Dowsing hit revealed with gold lightning." width="640" height="1388" loading="lazy" /></div>
+            <div class="phone"><img src="/imgs/screens/dowsing-hit.webp" alt="A Dowsing hit revealed with gold lightning." width="640" height="1388" loading="lazy" /></div>
             <figcaption class="rail__cap">Dowsing · a hit</figcaption>
           </figure>
           <figure class="rail__item">
-            <div class="phone"><img src="./imgs/screens/starseeds-drop.webp" alt="A Star Seeds drop in mid-fall." width="640" height="1388" loading="lazy" /></div>
-            <figcaption class="rail__cap">Star Seeds · the drop</figcaption>
+            <div class="phone"><img src="/imgs/screens/starseeds-drop.webp" alt="A Star Seed drop in mid-fall." width="640" height="1388" loading="lazy" /></div>
+            <figcaption class="rail__cap">Star Seed · the drop</figcaption>
           </figure>
           <figure class="rail__item">
-            <div class="phone"><img src="./imgs/screens/zener-results.webp" alt="Zener session results with the signal map." width="720" height="1562" loading="lazy" /></div>
+            <div class="phone"><img src="/imgs/screens/zener-results.webp" alt="Zener session results with the signal map." width="720" height="1562" loading="lazy" /></div>
             <figcaption class="rail__cap">Session review</figcaption>
           </figure>
           <figure class="rail__item">
-            <div class="phone"><img src="./imgs/screens/statistics.webp" alt="Zener statistics screen." width="640" height="1388" loading="lazy" /></div>
+            <div class="phone"><img src="/imgs/screens/statistics.webp" alt="Zener statistics screen." width="640" height="1388" loading="lazy" /></div>
             <figcaption class="rail__cap">Statistics</figcaption>
           </figure>
           <figure class="rail__item">
-            <div class="phone"><img src="./imgs/screens/leaderboards.webp" alt="Global leaderboards." width="640" height="1388" loading="lazy" /></div>
+            <div class="phone"><img src="/imgs/screens/leaderboards.webp" alt="Global leaderboards." width="640" height="1388" loading="lazy" /></div>
             <figcaption class="rail__cap">Leaderboards</figcaption>
           </figure>
           <figure class="rail__item">
-            <div class="phone"><img src="./imgs/screens/game-info.webp" alt="Game Info screen explaining rules and odds." width="640" height="1388" loading="lazy" /></div>
+            <div class="phone"><img src="/imgs/screens/game-info.webp" alt="Game Info screen explaining rules and odds." width="640" height="1388" loading="lazy" /></div>
             <figcaption class="rail__cap">Game info</figcaption>
           </figure>
           <figure class="rail__item">
-            <div class="phone"><img src="./imgs/screens/nav-drawer.webp" alt="The navigation drawer listing games, explore, MindSight and options." width="640" height="1388" loading="lazy" /></div>
+            <div class="phone"><img src="/imgs/screens/nav-drawer.webp" alt="The navigation drawer listing games, explore, MindSight and options." width="640" height="1388" loading="lazy" /></div>
             <figcaption class="rail__cap">Navigation</figcaption>
           </figure>
           <figure class="rail__item">
-            <div class="phone"><img src="./imgs/screens/mindsight-color.webp" alt="MindSight Colour filling the screen with red during a scored attempt." width="640" height="1388" loading="lazy" /></div>
+            <div class="phone"><img src="/imgs/screens/mindsight-color.webp" alt="MindSight Colour filling the screen with red during a scored attempt." width="640" height="1388" loading="lazy" /></div>
             <figcaption class="rail__cap">MindSight · Colour</figcaption>
           </figure>
+        </div>
+      </section>
+
+      <!-- ================================= FAQ =============================== -->
+      <section class="section" id="faq">
+        <div class="shell">
+          <div class="section-head section-head--center reveal">
+            <span class="eyebrow">FAQ</span>
+            <h2>Questions, <span class="grad">answered plainly</span></h2>
+          </div>
+
+          <div class="faq reveal">
+            <details>
+              <summary>Is Psychic Tournament free?</summary>
+              <p>
+                Yes. It's free to download on Google Play and the App Store. The app is
+                supported by ads shown between sessions, never during a call.
+              </p>
+            </details>
+            <details>
+              <summary>How does the ESP test work?</summary>
+              <p>
+                Each session is twenty-five calls. Every call has five equally likely
+                answers, so guessing alone averages five hits, or 20%. Your result is
+                always shown against that line, so you can see whether you're above it,
+                at it, or below it.
+              </p>
+            </details>
+            <details>
+              <summary>What are Zener cards?</summary>
+              <p>
+                The five-symbol set (circle, cross, waves, square and star) designed by
+                psychologist Karl Zener for J. B. Rhine's ESP experiments at Duke
+                University in the 1930s. Psychic Tournament's Zener game draws each card
+                independently, so there's no deck to count.
+              </p>
+            </details>
+            <details>
+              <summary>What's a good score?</summary>
+              <p>
+                Chance averages 5 out of 25, and anything from 2 to 8 happens routinely by
+                luck. Score 11 or better and you're on the global leaderboard. By chance
+                alone, that happens about once in 180 sessions.
+              </p>
+            </details>
+            <details>
+              <summary>Does it work offline?</summary>
+              <p>
+                Yes. The games, MindSight training, history and statistics all work with no
+                connection and no account. Leaderboards, Daily Vision and player profiles
+                need a connection, and Daily Vision and profiles need you to sign in.
+              </p>
+            </details>
+            <details>
+              <summary>What is MindSight training?</summary>
+              <p>
+                Blindfolded perception practice that normally needs a partner to hold up
+                targets. The app takes the partner's place: it picks a colour, shape or
+                word and gives you the answer through sound and vibration, so you can
+                practise alone with the blindfold on.
+              </p>
+            </details>
+            <details>
+              <summary>Is multiplayer coming?</summary>
+              <p>
+                Yes. Realtime <a href="#coming-soon">telepathy multiplayer</a> is in
+                development: one player sees the outcome and sends it, the other receives
+                it and calls it, and both are rewarded when the message gets through. A
+                psychokinesis game called Mind Move is on the way too.
+              </p>
+            </details>
+            <details>
+              <summary>Does a high score prove I'm psychic?</summary>
+              <p>
+                No. Psychic Tournament is a training and entertainment app, not a
+                scientific instrument. A good score is a good score. The only result worth
+                paying attention to is one that stays above chance across many sessions.
+              </p>
+            </details>
+          </div>
         </div>
       </section>
 
@@ -781,49 +1271,41 @@
       <section class="section" id="get">
         <div class="shell">
           <div class="cta reveal">
-            <span class="eyebrow eyebrow--plain" style="justify-content: center">Out now on iOS</span>
+            <span class="hero__tag hero__tag--center">
+              <span class="live-dot" aria-hidden="true"></span>
+              Out now on Android &amp; iOS
+            </span>
             <h2>Ready when <span class="grad">you are</span></h2>
             <p class="lede">
-              Psychic Tournament is on the App Store today, with Android close behind. Free
-              to play, no account needed, and every session yours to keep.
+              Free to play, no account needed, and every session is yours to keep. Your
+              first Daily Vision is waiting.
             </p>
 
-            <div class="stores">
-              <span class="store" role="img" aria-label="Google Play — coming soon">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M4.6 2.4 15.9 12 4.6 21.6a1.6 1.6 0 0 1-.6-1.3V3.7c0-.5.2-1 .6-1.3Z" fill="url(#g3)" />
-                  <path d="M15.9 12 4.6 21.6c.4.3 1 .3 1.5 0l13-7.5-3.2-2.1Z" fill="#00D4FF" />
-                  <path d="M15.9 12 6.1 2.4c-.5-.3-1.1-.3-1.5 0L15.9 12Z" fill="#8B5CF6" />
-                  <path d="m19.1 9.9-3.2 2.1 3.2 2.1c1.2-.7 1.2-3.5 0-4.2Z" fill="#FFC24B" />
-                  <defs>
-                    <linearGradient id="g3" x1="4" y1="3" x2="16" y2="21" gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#8B5CF6" /><stop offset="1" stop-color="#1256C4" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+            <div class="stores" data-stores>
+              <a
+                class="store store--live"
+                data-store="google_play"
+                href="https://play.google.com/store/apps/details?id=com.overninethousand.psychictournament"
+                target="_blank"
+                rel="noopener"
+                aria-label="Get Psychic Tournament on Google Play"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-play" /></svg>
                 <span class="store__txt">
-                  <span class="store__top">Coming soon to</span>
+                  <span class="store__top">Get it on</span>
                   <span class="store__name">Google Play</span>
                 </span>
-              </span>
+              </a>
 
               <a
                 class="store store--live"
+                data-store="app_store"
                 href="https://apps.apple.com/us/app/psychic-tournament/id6806195000"
                 target="_blank"
                 rel="noopener"
                 aria-label="Download Psychic Tournament on the App Store"
               >
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="url(#g4)" stroke-width="1.6" />
-                  <path d="M8 16.4 12 7.6l4 8.8" stroke="url(#g4)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M9.7 13.6h4.6" stroke="#FFC24B" stroke-width="1.8" stroke-linecap="round" />
-                  <defs>
-                    <linearGradient id="g4" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#E9E6FF" /><stop offset="1" stop-color="#00D4FF" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-appstore" /></svg>
                 <span class="store__txt">
                   <span class="store__top">Download on the</span>
                   <span class="store__name">App Store</span>
@@ -841,12 +1323,12 @@
         <div class="footer__top">
           <div>
             <a class="brand" href="/">
-              <img class="brand__mark" src="./imgs/logo.svg" alt="" width="34" height="34" />
+              <img class="brand__mark" src="/imgs/logo.svg" alt="" width="34" height="34" />
               <span>Psychic Tournament</span>
             </a>
             <p class="footer__blurb">
-              An intuition trainer for people who like their odds stated plainly. Built by
-              OverNineThousand.
+              An ESP and intuition game for people who like their odds stated plainly.
+              Built by <a href="https://overninethousand.com/">OverNineThousand</a>.
             </p>
           </div>
 
@@ -856,17 +1338,25 @@
               <ul>
                 <li><a href="#games">Zener</a></li>
                 <li><a href="#games">Dowsing</a></li>
-                <li><a href="#games">Star Seeds</a></li>
+                <li><a href="#games">Star Seed</a></li>
                 <li><a href="#mindsight">MindSight</a></li>
+                <li><a href="#coming-soon">Coming soon</a></li>
               </ul>
             </div>
             <div>
               <h4>Explore</h4>
               <ul>
-                <li><a href="#review">Session review</a></li>
+                <li><a href="#progression">Progression</a></li>
                 <li><a href="#leaderboards">Leaderboards</a></li>
                 <li><a href="#odds">The odds</a></li>
-                <li><a href="#get">Get the app</a></li>
+                <li><a href="#faq">FAQ</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Download</h4>
+              <ul>
+                <li><a data-store="google_play" href="https://play.google.com/store/apps/details?id=com.overninethousand.psychictournament" target="_blank" rel="noopener">Google Play</a></li>
+                <li><a data-store="app_store" href="https://apps.apple.com/us/app/psychic-tournament/id6806195000" target="_blank" rel="noopener">App Store</a></li>
               </ul>
             </div>
             <div>
@@ -874,7 +1364,7 @@
               <ul>
                 <li><a href="/privacy-policy.html">Privacy Policy</a></li>
                 <li><a href="/terms-of-service.html">Terms of Service</a></li>
-          <li><a href="/account-deletion.html">Delete Account</a></li>
+                <li><a href="/account-deletion.html">Delete Account</a></li>
               </ul>
             </div>
           </div>
@@ -920,6 +1410,32 @@
         }
       });
 
+      /* ---------- store badges ----------
+         Put the visitor's own store first, and count clicks per store. */
+      (function () {
+        var ua = navigator.userAgent || "";
+        var mine = /android/i.test(ua)
+          ? "google_play"
+          : /iphone|ipad|ipod/i.test(ua) || (/macintosh/i.test(ua) && navigator.maxTouchPoints > 1)
+            ? "app_store"
+            : null;
+        if (mine) {
+          document.querySelectorAll("[data-stores]").forEach(function (group) {
+            var badge = group.querySelector('[data-store="' + mine + '"]');
+            if (badge) {
+              group.insertBefore(badge, group.firstChild);
+              badge.classList.add("is-yours");
+            }
+          });
+        }
+        document.addEventListener("click", function (e) {
+          var link = e.target.closest && e.target.closest("a[data-store]");
+          if (link && window.gtag) {
+            gtag("event", "store_click", { store: link.getAttribute("data-store") });
+          }
+        });
+      })();
+
       /* ---------- scroll reveal ---------- */
       var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       var items = document.querySelectorAll(".reveal");
@@ -953,6 +1469,16 @@
             el.classList.add("is-in");
           });
         }, 3000);
+      }
+
+      // The coming-soon illustrations animate with SMIL, which CSS can't pause.
+      if (reduce) {
+        document.querySelectorAll(".soon__art svg").forEach(function (svg) {
+          if (svg.pauseAnimations) {
+            svg.setCurrentTime && svg.setCurrentTime(3.6);
+            svg.pauseAnimations();
+          }
+        });
       }
 
       /* ---------- starfield ----------
