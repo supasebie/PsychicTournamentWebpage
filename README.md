@@ -33,7 +33,7 @@ The site deliberately mirrors the app's visual language rather than inventing it
 near-black indigo surfaces (`#0E0B1F`), violet (`#6B2DD9`) and deep blue (`#1256C4`)
 accents, electric cyan (`#00D4FF`) highlights, gold for exceptional results, glass panels,
 and Sora throughout. Each game mode carries its in-app colour — Zener violet, Dowsing mint,
-Star Seeds rose.
+Star Seed rose, Lodestar fuchsia into sapphire (`#F26BE3` → `#5B8DFF`).
 
 Two things worth not breaking:
 
@@ -69,6 +69,37 @@ cwebp -crop 0 0 1280 2776 -resize 640 0 -q 84 -m 6 shot.png -o imgs/screens/name
 ```
 
 Exit demo mode with `adb shell am broadcast -a com.android.systemui.demo -e command exit`.
+
+### From the iOS Simulator
+
+The 1.1 shots (Lodestar, the Mindsight menu, Focus Training, the drawer) come from an iPhone 17
+Pro simulator. Release builds can't run on a simulator, so build debug with the tester surface
+switched off. `TESTER_TOOLS=false` hides the tester-only controls (the drawer's Options row,
+Focus Training's Session options) without changing anything else:
+
+```bash
+scripts/build.sh dev ios --simulator --debug --dart-define=TESTER_TOOLS=false
+```
+
+Run that in the app repo, install `build/ios/iphonesimulator/Runner.app`, then pin the status bar
+and capture:
+
+```bash
+xcrun simctl status_bar booted override --time "9:41" --batteryState charged --batteryLevel 100 --cellularMode notSupported --wifiBars 3 --dataNetwork wifi
+```
+
+```bash
+xcrun simctl io booted screenshot --type=png shot.png
+```
+
+The simulator captures at 1206×2622. Cropping to 1206×2616 gives the same aspect ratio as the
+Android crop:
+
+```bash
+cwebp -crop 0 0 1206 2616 -resize 640 0 -q 84 -m 6 shot.png -o imgs/screens/name.webp
+```
+
+Wait for the "Log in to set a username!" snackbar to clear before you shoot the menus.
 
 ## Store links
 
