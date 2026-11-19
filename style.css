@@ -3110,6 +3110,103 @@ a.hero__tag:hover {
 }
 
 /* --------------------------------------------------------------------------
+   Desktop QR card — points at /get/, which sends each phone to its own store.
+   Only on wide screens with a mouse: on a phone the hero badges already work.
+   -------------------------------------------------------------------------- */
+
+.qr-card {
+  display: none;
+}
+
+@media (min-width: 1000px) and (hover: hover) and (pointer: fine) {
+  .qr-card:not([hidden]) {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    width: 172px;
+    padding: 1rem 1rem 0.95rem;
+    text-align: center;
+    background: linear-gradient(160deg, rgba(107, 45, 217, 0.5), rgba(18, 86, 196, 0.42)),
+      var(--glass-hi);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-lg);
+    backdrop-filter: blur(14px) saturate(130%);
+    -webkit-backdrop-filter: blur(14px) saturate(130%);
+    box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.9), var(--glow-violet),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    animation: qr-card-in 0.5s 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+}
+
+@keyframes qr-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+.qr-card__eyebrow {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--violet-pale);
+}
+
+.qr-card__code {
+  display: block;
+  width: 132px;
+  height: 132px;
+  margin: 0.3rem 0 0.4rem;
+  padding: 6px;
+  background: #fff;
+  border-radius: var(--r-sm);
+}
+
+.qr-card__title {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.qr-card__sub {
+  font-size: 0.74rem;
+  color: var(--ink-dim);
+}
+
+.qr-card__close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink-faint);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.qr-card__close:hover,
+.qr-card__close:focus-visible {
+  background: rgba(233, 230, 255, 0.12);
+  color: var(--ink);
+}
+
+.qr-card__close svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* --------------------------------------------------------------------------
    Reduced motion — the app honours MediaQuery.disableAnimations; so do we.
    -------------------------------------------------------------------------- */
 

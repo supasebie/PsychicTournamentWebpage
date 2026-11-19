@@ -12,6 +12,8 @@ custom domain lives in `CNAME`.
 | `style.css` | The whole design system. Tokens at the top mirror `lib/theme/app_theme.dart` in the app. |
 | `privacy-policy.html` | Static privacy policy. |
 | `account-deletion.html` | Account deletion instructions Google Play links to. `noindex`, not in the sitemap. |
+| `get/index.html` | QR code target (`/get/`). Sends Android to Google Play and iPhone/iPad to the App Store; desktop and unknown devices see both buttons. Logs a `qr_redirect` analytics event. `noindex`, not in the sitemap. |
+| `imgs/qr-get-app.svg`, `.png` | QR code for `https://psychictournament.online/get/` (error correction H). Shown in the home page's bottom-right "Get the app" card (`.qr-card`), which only appears on screens ≥1000px with a mouse and remembers its close button in `localStorage`. Regenerate with `segno` if the URL changes, and keep the SVG's `viewBox` so it scales. |
 | `404.html` | GitHub Pages serves this for any missing path. |
 | `robots.txt`, `sitemap.xml` | Crawl rules and the URL list for Search Console. Bump `<lastmod>` when a page changes. |
 | `site.webmanifest` | Icons and the two store listings as `related_applications`. |

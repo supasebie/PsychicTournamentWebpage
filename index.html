@@ -1537,6 +1537,17 @@
       </div>
     </footer>
 
+    <!-- Desktop-only: phones already get their own store badge first in the hero -->
+    <aside class="qr-card" id="qr-card" aria-label="Get the app on your phone" hidden>
+      <button class="qr-card__close" type="button" aria-label="Hide the QR code">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+      </button>
+      <span class="qr-card__eyebrow">Get the app</span>
+      <img class="qr-card__code" src="/imgs/qr-get-app.svg" width="132" height="132" alt="QR code linking to Psychic Tournament on Google Play or the App Store" />
+      <span class="qr-card__title">Scan to download</span>
+      <span class="qr-card__sub">Free on Android &amp; iOS</span>
+    </aside>
+
     <script>
       /* ---------- sticky nav ---------- */
       var nav = document.getElementById("nav");
@@ -1735,6 +1746,25 @@
       })();
 
       document.getElementById("yr").textContent = new Date().getFullYear();
+
+      /* ---------- desktop QR card ----------
+         CSS decides whether it shows (wide screen + mouse); this only handles
+         the close button and remembers it for this browser. */
+      (function () {
+        var card = document.getElementById("qr-card");
+        var KEY = "pt-qr-card-hidden";
+        try {
+          if (localStorage.getItem(KEY) === "1") return;
+        } catch (e) {}
+        card.hidden = false;
+        card.querySelector(".qr-card__close").addEventListener("click", function () {
+          card.hidden = true;
+          try {
+            localStorage.setItem(KEY, "1");
+          } catch (e) {}
+          if (window.gtag) gtag("event", "qr_card_dismiss");
+        });
+      })();
     </script>
   </body>
 </html>

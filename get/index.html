@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Psychic Tournament</title>
+    <meta name="description" content="Download Psychic Tournament, the free ESP and intuition game, for Android or iOS." />
+    <!-- Redirect hop for the QR code: keep it out of search results -->
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#0E0B1F" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href="https://psychictournament.online/" />
+    <link rel="icon" href="/imgs/logo.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/imgs/apple-touch-icon.png" />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDJNVSQRJX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-PDJNVSQRJX");
+
+      /* Send phones straight to their own store. Same detection as the badges on
+         the home page; iPadOS reports itself as a Mac, so touch support tells them
+         apart. Anything else (desktop, unknown) stays here and picks a store. */
+      (function () {
+        var STORES = {
+          google_play: "https://play.google.com/store/apps/details?id=com.overninethousand.psychictournament",
+          app_store: "https://apps.apple.com/us/app/psychic-tournament/id6806195000",
+        };
+        var ua = navigator.userAgent || "";
+        var mine = /android/i.test(ua)
+          ? "google_play"
+          : /iphone|ipad|ipod/i.test(ua) || (/macintosh/i.test(ua) && navigator.maxTouchPoints > 1)
+            ? "app_store"
+            : null;
+        if (!mine) return;
+
+        document.documentElement.classList.add("is-redirecting");
+        var gone = false;
+        function go() {
+          if (gone) return;
+          gone = true;
+          location.replace(STORES[mine]);
+        }
+        // Give analytics a moment to record the scan, but never hold the visitor up.
+        gtag("event", "qr_redirect", { store: mine, transport_type: "beacon", event_callback: go });
+        setTimeout(go, 600);
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&amp;display=swap" />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      .get__busy { display: none; }
+      .is-redirecting .get__busy { display: block; }
+    </style>
+  </head>
+
+  <body>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="gp-left" x1="4" y1="3" x2="16" y2="21" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#8B5CF6" />
+          <stop offset="1" stop-color="#1256C4" />
+        </linearGradient>
+        <linearGradient id="as-edge" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#E9E6FF" />
+          <stop offset="1" stop-color="#00D4FF" />
+        </linearGradient>
+        <symbol id="ico-play" viewBox="0 0 24 24">
+          <path d="M4.6 2.4 15.9 12 4.6 21.6a1.6 1.6 0 0 1-.6-1.3V3.7c0-.5.2-1 .6-1.3Z" fill="url(#gp-left)" />
+          <path d="M15.9 12 4.6 21.6c.4.3 1 .3 1.5 0l13-7.5-3.2-2.1Z" fill="#00D4FF" />
+          <path d="M15.9 12 6.1 2.4c-.5-.3-1.1-.3-1.5 0L15.9 12Z" fill="#8B5CF6" />
+          <path d="m19.1 9.9-3.2 2.1 3.2 2.1c1.2-.7 1.2-3.5 0-4.2Z" fill="#FFC24B" />
+        </symbol>
+        <symbol id="ico-appstore" viewBox="0 0 24 24" fill="none">
+          <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="url(#as-edge)" stroke-width="1.6" />
+          <path d="M8 16.4 12 7.6l4 8.8" stroke="url(#as-edge)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M9.7 13.6h4.6" stroke="#FFC24B" stroke-width="1.8" stroke-linecap="round" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <div class="sky" aria-hidden="true"></div>
+    <div class="sky-glow sky-glow--violet" aria-hidden="true"></div>
+    <div class="sky-glow sky-glow--blue" aria-hidden="true"></div>
+
+    <main class="section">
+      <div class="shell">
+        <div class="cta">
+          <span class="eyebrow eyebrow--plain" style="justify-content: center">Free on Android &amp; iOS</span>
+          <h1 style="font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 0.5em">
+            Get <span class="grad">Psychic Tournament</span>
+          </h1>
+          <p class="lede get__busy" aria-live="polite">Opening your app store…</p>
+          <p class="lede">Choose your store below.</p>
+
+          <div class="stores" style="justify-content: center; margin-top: 2em">
+            <a
+              class="store store--live"
+              data-store="google_play"
+              href="https://play.google.com/store/apps/details?id=com.overninethousand.psychictournament"
+              aria-label="Get Psychic Tournament on Google Play"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-play" /></svg>
+              <span class="store__txt">
+                <span class="store__top">Get it on</span>
+                <span class="store__name">Google Play</span>
+              </span>
+            </a>
+
+            <a
+              class="store store--live"
+              data-store="app_store"
+              href="https://apps.apple.com/us/app/psychic-tournament/id6806195000"
+              aria-label="Download Psychic Tournament on the App Store"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-appstore" /></svg>
+              <span class="store__txt">
+                <span class="store__top">Download on the</span>
+                <span class="store__name">App Store</span>
+              </span>
+            </a>
+          </div>
+
+          <p style="margin-top: 2em"><a href="/">Learn more about the app</a></p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
